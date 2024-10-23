@@ -1,3 +1,18 @@
+:root[data-theme="light"] {
+  --text: #171717;
+  --background: #ededed;
+  --primary: #e08a00;
+  --secondary: #b8b8b8;
+  --accent: #4d4d4d;
+}
+:root[data-theme="dark"] {
+  --text: #e8e8e8;
+  --background: #121212;
+  --primary: #ffa91f;
+  --secondary: #474747;
+  --accent: #b3b3b3;
+}
+
 .App {
   text-align: center;
 }
