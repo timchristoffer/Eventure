@@ -8,16 +8,17 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 80px; /* Gör knappen större */
-    height: 80px; /* Gör knappen större */
+    margin-top: 6px;
+    width: 80px; 
+    height: 80px; 
     background: var(--switch-bg);
     border: none;
     cursor: pointer;
-    position: fixed; /* Placera knappen i det övre högra hörnet */
+    position: fixed; 
     top: 20px;
     right: 20px;
     transition: background-color 0.4s;
-    z-index: 1000; /* Se till att knappen är överst */
+    z-index: 1000;
   }
   
   .theme-toggle-sr {
@@ -33,8 +34,8 @@
   
   .theme-toggle__expand,
   .theme-toggle__collapse {
-    width: 2em; /* Gör ikonerna större */
-    height: 2em; /* Gör ikonerna större */
+    width: 2em; 
+    height: 2em; 
     fill: currentColor;
     transition: opacity 0.4s, transform 0.4s;
   }

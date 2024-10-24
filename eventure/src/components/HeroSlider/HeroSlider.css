@@ -36,7 +36,7 @@ img {
     position: relative;
     transition: .5s;
     filter: brightness(0.4);
-    margin: 0 5px; /* Adding some margin between items */
+    margin: 0 5px; 
 }
 
 .heroList .heroItem:hover {
