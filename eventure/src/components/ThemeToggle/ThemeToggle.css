@@ -1,0 +1,69 @@
+.theme-switch-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .theme-toggle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px; /* Gör knappen större */
+    height: 80px; /* Gör knappen större */
+    background: var(--switch-bg);
+    border: none;
+    cursor: pointer;
+    position: fixed; /* Placera knappen i det övre högra hörnet */
+    top: 20px;
+    right: 20px;
+    transition: background-color 0.4s;
+    z-index: 1000; /* Se till att knappen är överst */
+  }
+  
+  .theme-toggle-sr {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+  }
+  
+  .theme-toggle__expand,
+  .theme-toggle__collapse {
+    width: 2em; /* Gör ikonerna större */
+    height: 2em; /* Gör ikonerna större */
+    fill: currentColor;
+    transition: opacity 0.4s, transform 0.4s;
+  }
+
+  .theme-toggle__expand{
+    fill: var(--primary);
+  }
+  
+  .theme-toggle__collapse {
+    position: absolute;
+    opacity: 0;
+    transform: rotate(180deg);
+  }
+  
+  .theme-toggle--toggled .theme-toggle__expand {
+    opacity: 0;
+    transform: rotate(180deg);
+  }
+  
+  .theme-toggle--toggled .theme-toggle__collapse {
+    opacity: 1;
+    transform: rotate(0deg);
+  }
+  
+  .theme-toggle--toggled {
+    background: var(--color-back);
+  }
+  
+  .theme-toggle--toggled .theme-toggle__expand,
+  .theme-toggle--toggled .theme-toggle__collapse {
+    color: var(--color-front);
+  }

@@ -5,11 +5,13 @@ import Aboutpage from './pages/Aboutpage/Aboutpage';
 import Eventpage from './pages/Eventpage/Eventpage';
 import Homepage from './pages/Homepage/Homepage';
 import Searchpage from './pages/Searchpage/Searchpage';
+import ThemeToggle from './components/ThemeToggle/ThemeToggle';
 
 function App() {
   return (
     <Router>
       <div className="App">
+        <ThemeToggle />
         <header className="App-header">
         </header>
         <Routes>

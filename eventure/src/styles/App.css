@@ -1,14 +1,41 @@
 :root[data-theme="light"] {
   --text: #171717;
+  --secondary-text: #b8b8b8;
   --background: #ededed;
   --primary: #e08a00;
   --secondary: #b8b8b8;
   --accent: #4d4d4d;
 }
+
 :root[data-theme="dark"] {
   --text: #e8e8e8;
+  --secondary-text: #171717;
   --background: #121212;
   --primary: #ffa91f;
   --secondary: #474747;
   --accent: #b3b3b3;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--text);
+}
+
+a {
+  color: var(--primary);
+}
+
+button {
+  background-color: var(--primary);
+  color: var(--text);
+}
+
+.header {
+  background-color: var(--secondary);
+  color: var(--text);
+}
+
+.footer {
+  background-color: var(--accent);
+  color: var(--text);
 }
