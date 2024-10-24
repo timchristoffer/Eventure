@@ -1,0 +1,66 @@
+{
+  "kind": "collectionType",
+  "collectionName": "events",
+  "info": {
+    "singularName": "event",
+    "pluralName": "events",
+    "displayName": "Event",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "eventTitle": {
+      "type": "string"
+    },
+    "eventDescription": {
+      "type": "blocks"
+    },
+    "eventTime": {
+      "type": "datetime"
+    },
+    "eventPicture": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "host": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::host.host",
+      "inversedBy": "events"
+    },
+    "eventPrice": {
+      "type": "integer"
+    },
+    "eventVenue": {
+      "type": "string"
+    },
+    "eventFeatured": {
+      "type": "boolean"
+    },
+    "eventGenre": {
+      "type": "enumeration",
+      "enum": [
+        "Music",
+        "Food",
+        "Sport",
+        "Culture",
+        "Technology",
+        "Fashion",
+        "Movie",
+        "Charity",
+        "Education",
+        "Family"
+      ]
+    }
+  }
+}
