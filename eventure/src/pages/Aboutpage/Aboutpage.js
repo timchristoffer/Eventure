@@ -8,7 +8,7 @@ const Aboutpage = () => {
 
   return (
     <div className="aboutUsPage">
-      <h1 className="aboutUsHeader">About Us</h1>
+      <h1 className="aboutUsHeader">About Eventure</h1>
       <h2>What is Eventure?</h2>
       <p>Eventure is an online service which allows people and organizations to organize, 
         publish, find and participate in different kinds off events from things like a casual game night at a local bar to much larger 
@@ -25,22 +25,22 @@ const Aboutpage = () => {
       </p>
       <div className="employee-container">
         <div className="employee">
-          <img src="/placeholderEmployee.jpg" alt="Worker 1" />
+          <img src="/placeholderEmployee.jpg" alt="Kalle, IT Manager at Eventure" />
           <p>Kalle</p>
           <p className="jobTitle">IT Manager</p>
         </div>
         <div className="employee">
-          <img src="/placeholderEmployee.jpg" alt="Worker 2" />
+          <img src="/placeholderEmployee.jpg" alt="Linus, Product Manager at Eventure" />
           <p>Linus</p>
           <p className="jobTitle">Product Manager</p>
         </div>
         <div className="employee">
-          <img src="/placeholderEmployee.jpg" alt="Worker 3" />
+          <img src="/placeholderEmployee.jpg" alt="Oliver, Quality Assurance at Eventure" />
           <p>Oliver</p>
           <p className="jobTitle">Quality Assurance</p>
         </div>
         <div className="employee">
-          <img src="/placeholderEmployee.jpg" alt="Worker 4" /> 
+          <img src="/placeholderEmployee.jpg" alt="Tim, Software Architect at Eventure" /> 
           <p>Tim</p>
           <p className="jobTitle">Software Architect</p>
         </div>
