@@ -51,7 +51,7 @@ const JobApplicationForm = ({ onClose }) => {
     <div className="JobApplicationForm">
       <div className="JobApplicationFormContainer">
         <h2>Job Application Form</h2>
-        {error && <div className="error-message">{error}</div>} {/* Display error message */}
+        {error && <div className="error-message">{error}</div>} 
         <form onSubmit={handleSubmit}>
           <div className="ApplicationFormField">
             <label>Name:</label>
