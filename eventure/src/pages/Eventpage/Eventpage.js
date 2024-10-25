@@ -2,8 +2,6 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import './Eventpage.css'
 
-
-
 const Eventpage = () => {
 
   const [event, setEvent] =  useState(null)
@@ -16,7 +14,7 @@ const Eventpage = () => {
         setEvent(response.data.data);
       } catch (error) {
         console.error('Error fetching Event:', error);
-        // alert("Failed to fetch Event");
+        alert("Failed to fetch Event");
       }
     };
     
@@ -26,17 +24,28 @@ const Eventpage = () => {
   console.log(event)
 
   if (!event) {
-    return <div>Loading...</div>; // Visa en laddningsskärm medan event-datan hämtas
+    return <div className='loading-message'>Loading...</div>; 
   }
 
   const eventImg = event.eventPicture?.url 
   ? `http://localhost:1337${event.eventPicture.url}`
   : ''
 
-  const description = event.eventDescription.map((paragraph) => (
-      paragraph.children.map((child) => (
-        child.text
-      ))))
+  const description = event.eventDescription.map((paragraph) =>
+    paragraph.children.map((child, index) => (
+      <p key={index}>
+        {child.bold && child.italic ? (
+          <strong><em>{child.text}</em></strong>
+        ) : child.bold ? (
+          <strong>{child.text}</strong>
+        ) : child.italic ? (
+          <em>{child.text}</em>
+        ) : (
+          child.text
+        )}
+      </p>
+    ))
+  );
   
   const eventDateTime = new Date(event.eventTime)
   const readableEventTime = eventDateTime.toLocaleString('sv-SE', {
@@ -46,7 +55,6 @@ const Eventpage = () => {
     hour: '2-digit',
     minute: '2-digit',
   });
-    
 
   return (
     <div>
@@ -63,7 +71,8 @@ const Eventpage = () => {
         <div className='event-info'>
           <p><b>Datum: </b>{readableEventTime}</p>
           <p><b>Plats: </b>{event.eventVenue}</p>
-          <p><b>Pris från:  </b>{event.eventPrice} kr</p>
+          <p><b>Pris från: </b>{event.eventPrice} kr</p>
+          <p><b>Värd:  </b>{event.host.hostName} <em>({event.host.hostContact})</em></p>
 
         </div>
       </div>
