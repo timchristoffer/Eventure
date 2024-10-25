@@ -28,3 +28,12 @@
     display: block;
     margin-bottom: 0.3125rem;
 }
+
+.JobApplicationSubmitButton {
+    width: 4rem;
+    max-width: 4rem;
+}
+.JobApplicationCloseButton {
+    width: 4rem;
+    max-width: 4rem;
+}
