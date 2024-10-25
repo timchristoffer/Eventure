@@ -81,6 +81,8 @@ img {
     transition: opacity 0.5s;
     border-radius: 5px;
     pointer-events: none;
+    border: 2px solid var(--accent);
+    z-index: 10;
 }
 
 .heroList .heroItem:hover .heroInfo {

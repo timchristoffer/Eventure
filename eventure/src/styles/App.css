@@ -1,4 +1,5 @@
-/* Reset-stilar för att säkerställa konsekvens över olika webbläsare */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@100;300;400;500;700&family=Zilla+Slab:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+
 * {
   box-sizing: border-box;
 }
@@ -9,12 +10,28 @@ html {
 }
 
 body {
-  font-family: Arial, sans-serif;
   background-color: var(--background);
+  background-image: var(--background-image);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   color: var(--text);
   line-height: 1.6;
   margin: 0;
   padding: 0;
+}
+
+h1{
+  font-family: 'Zilla Slab', Arial, sans-serif;
+}
+
+h2, h3, h4, h5, h6 {
+  font-family: 'Bebas Neue', sans-serif;
+}
+
+/* Använd Roboto för paragrafer */
+p {
+  font-family: 'Roboto', sans-serif;
 }
 
 .App{
@@ -26,10 +43,13 @@ body {
 :root[data-theme="light"] {
   --text: #171717;
   --secondary-text: #e8e8e8;
-  --background: #ededed;
+  --background: #e0dacd;
   --primary: #ffa91f;
   --secondary: #b8b8b8;
   --accent: #4d4d4d;
+  --logo-filter: invert(0);
+  --background-image: url('../assets/images/background-light.svg'); /* Lägg till bakgrundsbild för light mode */
+  --header-image: url('../assets/header/header-light.svg'); /* Lägg till headerbild för light mode */
 }
 
 :root[data-theme="dark"] {
@@ -39,6 +59,9 @@ body {
   --primary: #e08a00;
   --secondary: #474747;
   --accent: #b3b3b3;
+  --logo-filter: invert(1);
+  --background-image: url('../assets/images/background-dark.svg'); /* Lägg till bakgrundsbild för dark mode */
+  --header-image: url('../assets/header/header-dark.svg'); /* Lägg till headerbild för dark mode */
 }
 
 /* Grundläggande stilar */

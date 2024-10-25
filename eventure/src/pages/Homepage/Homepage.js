@@ -1,12 +1,15 @@
 import React from 'react'
 
 import HeroSlider from '../../components/HeroSlider/HeroSlider'
+import LogoSlider from '../../components/InfiniteSlider/LogoSlider/LogoSlider'
+import HomeHeader from '../../components/Header/HomeHeader'
 
 const Homepage = () => {
   return (
     <div>
-      <h1>Homepage</h1>
       <HeroSlider />
+      <HomeHeader />
+      <LogoSlider />
     </div>
   )
 }

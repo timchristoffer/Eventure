@@ -6,6 +6,7 @@
     background-color: var(--primary); 
     color: var(--text); 
     width: 90%; 
+    height: 50px;
     position: fixed; 
     top: 0;
     left: 50%;
@@ -18,6 +19,12 @@
   
   .navbar-logo {
     flex: 1;
+  }
+  
+  .navbar-logo h1 {
+    margin: 0; /* Ta bort marginalen från h1 */
+    font-size: inherit; /* Ärva fontstorleken från föräldraelementet */
+    font-weight: inherit; /* Ärva fontvikten från föräldraelementet */
   }
   
   .navbar-logo a {
