@@ -1,15 +1,18 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
+import { useLocation } from 'react-router-dom';
 import './Eventpage.css'
 
 const Eventpage = () => {
 
-  const [event, setEvent] =  useState(null)
+  const [event, setEvent] = useState(null)
+  const location = useLocation();
+  const id = location.state?.id;
 
   useEffect(() => {
     const getData = async () => {
       try {
-        const response = await axios.get(`http://localhost:1337/api/events/umvlxfololdqd3np1nmsqcpg?populate=*`);
+        const response = await axios.get(`http://localhost:1337/api/events/${id}?populate=*`);
         console.log("Response data:", response.data);
         setEvent(response.data.data);
       } catch (error) {
@@ -22,7 +25,7 @@ const Eventpage = () => {
   }, []);
 
   console.log(event)
-
+  console.log(id)
   if (!event) {
     return <div className='loading-message'>Loading...</div>; 
   }
