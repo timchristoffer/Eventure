@@ -1,7 +1,23 @@
-import React from 'react'
+import React, { useState } from 'react';
 import './Aboutpage.css';
+import JobApplicationForm from './JobApplicationForm';
+
 
 const Aboutpage = () => {
+
+  const [isFormOpen, setIsFormOpen] = useState(false);
+  
+  const openForm = (e) => {
+    e.preventDefault(); 
+    setIsFormOpen(true);
+    document.body.classList.add('no-scroll');
+  };
+
+  const closeForm = () => {
+    setIsFormOpen(false);
+    document.body.classList.remove('no-scroll'); 
+  };
+
   const sendEmail = (emailAddress) => {
     window.location.href = `mailto:${emailAddress}`;
   };
@@ -47,9 +63,11 @@ const Aboutpage = () => {
       </div>
       <h2>Contact us</h2>
       <p> <img className="contactSymbols" src="/PhoneContactImage.jpg"></img>+46 6-69-463-099</p>
-      <p> <img className="contactSymbols" src="/EmailContactImage.png"></img><a href="#" onClick={() => sendEmail('eventure.planning@gmail.com')}>eventure.planning@gmail.com</a>
+      <img className="contactSymbols" src="/EmailContactImage.png"></img><a href="#" onClick={() => sendEmail('eventure.planning@gmail.com')}>eventure.planning@gmail.com</a>
       <p> <img className="contactSymbols" src="/LocationContactImage.jpg"></img>Kungsgatan 20, 582 18 Linköping</p>
-      </p>
+     <p><img className="contactSymbols" src="/JoinTheTeamContactImage.jpg" alt="join the team" /><a href="#" onClick={openForm}>Join the team</a></p>
+    
+     {isFormOpen && <JobApplicationForm onClose={closeForm} />}
     </div>
   )
 }
