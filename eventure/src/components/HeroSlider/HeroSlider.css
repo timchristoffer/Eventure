@@ -1,0 +1,90 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+img {
+    width: 200px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.heroTitle{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+
+.heroTitle a {
+    text-decoration: none;
+    color: var(--text);
+}
+
+.heroList {
+    display: flex;
+    flex-direction: row;
+    transform-style: preserve-3d;
+    transform: perspective(1000px);
+}
+
+.heroList .heroItem {
+    position: relative;
+    transition: .5s;
+    filter: brightness(0.4);
+    margin: 0 5px; 
+}
+
+.heroList .heroItem:hover {
+    filter: brightness(1);
+    transform: translateZ(200px);
+}
+.heroList .heroItem:hover + * {
+    filter: brightness(0.6) blur(1px);
+    transform: translateZ(150px) rotateY(40deg);
+}
+.heroList .heroItem:hover + * + * {
+    filter: brightness(0.4) blur(1px);
+    transform: translateZ(70px) rotateY(20deg);
+}
+.heroList .heroItem:hover + * + * + * {
+    filter: brightness(0.2) blur(1px);
+    transform: translateZ(30px) rotateY(10deg);
+}
+.heroList .heroItem:has(+ *:hover){
+    filter: brightness(0.6) blur(1px);
+    transform: translateZ(150px) rotateY(-40deg);
+}
+.heroList .heroItem:has(+ * + *:hover){
+    filter: brightness(0.4) blur(1px);
+    transform: translateZ(70px) rotateY(-20deg);
+}
+.heroList .heroItem:has(+ * + * + *:hover){
+    filter: brightness(0.2) blur(1px);
+    transform: translateZ(30px) rotateY(-10deg);
+}
+
+.heroList .heroItem .heroInfo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #e08a0066;
+    backdrop-filter: blur(10px);
+    color: white;
+    padding: 10px;
+    opacity: 0;
+    transition: opacity 0.5s;
+    border-radius: 5px;
+    pointer-events: none;
+    border: 2px solid var(--accent);
+    z-index: 10;
+}
+
+.heroList .heroItem:hover .heroInfo {
+    opacity: 1;
+}

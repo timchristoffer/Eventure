@@ -1,14 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@100;300;400;500;700&family=Zilla+Slab:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--background);
+  background-image: var(--background-image);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: var(--text);
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+h1{
+  font-family: 'Zilla Slab', Arial, sans-serif;
+}
+
+h2, h3, h4, h5, h6 {
+  font-family: 'Bebas Neue', sans-serif;
+}
+
+/* Använd Roboto för paragrafer */
+p {
+  font-family: 'Roboto', sans-serif;
+}
+
+.App{
+  margin-top: 100px; /* Justera detta värde baserat på höjden på din navbar */
+  padding: 20px;
+}
+
+/* Temadefinitioner */
 :root[data-theme="light"] {
   --text: #171717;
-  --background: #ededed;
-  --primary: #e08a00;
+  --secondary-text: #e8e8e8;
+  --background: #e0dacd;
+  --primary: #ffa91f;
   --secondary: #b8b8b8;
   --accent: #4d4d4d;
+  --logo-filter: invert(0);
+  --background-image: url('../assets/images/background-light.svg'); /* Lägg till bakgrundsbild för light mode */
+  --header-image: url('../assets/header/header-light.svg'); /* Lägg till headerbild för light mode */
 }
+
 :root[data-theme="dark"] {
   --text: #e8e8e8;
+  --secondary-text: #171717;
   --background: #121212;
-  --primary: #ffa91f;
+  --primary: #e08a00;
   --secondary: #474747;
   --accent: #b3b3b3;
+  --logo-filter: invert(1);
+  --background-image: url('../assets/images/background-dark.svg'); /* Lägg till bakgrundsbild för dark mode */
+  --header-image: url('../assets/header/header-dark.svg'); /* Lägg till headerbild för dark mode */
+}
+
+/* Grundläggande stilar */
+a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+button {
+  background-color: var(--primary);
+  color: var(--text);
+  cursor: pointer;
+  font-size: 1em;
+}
+
+.header, .footer {
+  background-color: var(--secondary);
+  color: var(--text);
+  padding: 20px;
+  text-align: center;
+}
+
+/* Responsiv layout */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: var(--secondary);
+}
+
+.navbar a {
+  color: var(--text);
+  margin: 0 10px;
+}
+
+.navbar-toggle {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+  }
+
+  .navbar-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    background-color: var(--secondary);
+    padding: 10px 0;
+  }
+
+  .navbar-links.open {
+    display: flex;
+  }
+
+  .navbar-toggle {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+  }
+
+  .navbar-toggle .bar {
+    width: 25px;
+    height: 3px;
+    background-color: var(--text);
+    margin: 4px 0;
+    transition: 0.4s;
+  }
 }

@@ -5,11 +5,16 @@ import Aboutpage from './pages/Aboutpage/Aboutpage';
 import Eventpage from './pages/Eventpage/Eventpage';
 import Homepage from './pages/Homepage/Homepage';
 import Searchpage from './pages/Searchpage/Searchpage';
+import ThemeToggle from './components/ThemeToggle/ThemeToggle';
+import Navbar from './components/Navbar/Navbar';
+import Footer from './components/Footer/Footer';
 
 function App() {
   return (
     <Router>
       <div className="App">
+        <Navbar />
+        <ThemeToggle />
         <header className="App-header">
         </header>
         <Routes>
@@ -19,6 +24,7 @@ function App() {
           <Route path="/search" element={<Searchpage />} />
           <Route path="/" element={<Homepage />} />
         </Routes>
+        <Footer />
       </div>
     </Router>
   );

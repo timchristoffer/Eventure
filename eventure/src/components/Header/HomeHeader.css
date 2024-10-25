@@ -1,0 +1,93 @@
+/* HomeHeader.css */
+.headerContainer {
+    background-image: var(--header-image);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    height: 400px; /* Justera höjden efter behov */
+    border-radius: 10px;
+    border: 2px solid var(--accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    position: relative;
+    z-index: 0; /* Sätt ett lägre z-index för header */
+  }
+  
+  .headerContent {
+    display: flex;
+    align-items: center;
+    text-align: left;
+    color: var(--text);
+  }
+  
+  .headerText {
+    margin-left: 20px; /* Lägg till marginal till vänster om texten */
+  }
+  
+  .headerText h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 3em;
+    margin: 0;
+  }
+  
+  .headerText h3 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.5em;
+    margin: 10px 0;
+  }
+  
+  .headerText p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1em;
+    margin: 5px 0;
+  }
+  
+  .headerImage {
+    width: 300px; /* Gör bilden större */
+    height: 300px; /* Gör bilden större */
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid var(--accent);
+    margin-right: 100px; /* Flytta bilden mer till vänster */
+  }
+  
+  .headerImage img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  /* HeroSlider.css */
+  .heroList {
+    position: relative; /* Lägg till position: relative om det inte redan finns */
+    z-index: 1; /* Sätt ett lägre z-index för heroList */
+  }
+  
+  .heroList .heroItem {
+    position: relative; /* Lägg till position: relative om det inte redan finns */
+    z-index: 1; /* Sätt ett lägre z-index för heroItem */
+  }
+  
+  .heroList .heroItem .heroInfo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #e08a0066;
+    backdrop-filter: blur(10px);
+    color: white;
+    padding: 10px;
+    opacity: 0;
+    transition: opacity 0.5s;
+    border-radius: 5px;
+    pointer-events: none;
+    border: 2px solid var(--accent);
+    z-index: 10; /* Sätt ett högre z-index för heroInfo */
+  }
+  
+  .heroList .heroItem:hover .heroInfo {
+    opacity: 1;
+  }
