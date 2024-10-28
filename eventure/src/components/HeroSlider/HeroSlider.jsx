@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import './HeroSlider.css';
+import { Link } from 'react-router-dom';
 
 const HeroSlider = () => {
   const [events, setEvents] = useState([]);
@@ -41,6 +42,11 @@ const HeroSlider = () => {
           console.log('Image URL:', imageUrl);
           return (
             <div className='heroItem' key={event.id}>
+              <Link 
+                to="/event"
+                state={{ id: event.documentId }}
+                key={event.id}
+              >
               {imageUrl && <img src={imageUrl} alt={event.eventTitle} onError={(e) => console.error('Image load error:', e)} />}
               <div className="heroInfo">
                 <h3>{event.eventTitle}</h3>
@@ -56,7 +62,8 @@ const HeroSlider = () => {
                 <p>{event.eventPrice}kr</p>
                 <p>{event.eventGenre}</p>
               </div>
-            </div>
+            </Link>
+          </div>
           );
         })}
       </div>

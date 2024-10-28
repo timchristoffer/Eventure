@@ -4,7 +4,7 @@ body {
     justify-content: center;
 }
 
-img {
+.heroImg {
     width: 200px;
     height: 150px;
     object-fit: cover;

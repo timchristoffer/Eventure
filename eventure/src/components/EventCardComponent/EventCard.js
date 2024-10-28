@@ -7,6 +7,15 @@ const EventCard = ({ event }) => {
     ? `http://localhost:1337${event.eventPicture.url}`
     : '';
 
+    const eventDateTime = new Date(event.eventTime)
+    const readableEventTime = eventDateTime.toLocaleString('sv-SE', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+    hour: '2-digit',
+    minute: '2-digit',
+  });
+
 
     return (
         <div className="EventCard">
@@ -15,6 +24,7 @@ const EventCard = ({ event }) => {
             onError={(e) => console.error('Image load error: ', e)}
             />}
             <h2>{event.eventTitle}</h2>
+            <p>{readableEventTime}</p>
             <p>{event.eventVenue}</p>
         </div>
     )
