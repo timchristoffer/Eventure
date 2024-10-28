@@ -74,7 +74,7 @@
     max-height: 9.375rem; 
     border-radius: 50%;
     object-fit: cover;
-    border: 0.1875rem solid var(--primary); 
+    border: 0.2rem solid var(--primary); 
     margin-top: -3.75rem;
     padding: 0.25rem;
   }
