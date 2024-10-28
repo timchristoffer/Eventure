@@ -27,7 +27,8 @@ const Searchpage = () => {
       setFilteredEvents(events);
     } else {
       const filtered = events.filter((event) =>
-        event.eventTitle.toLowerCase().includes(query.toLowerCase())
+        event.eventTitle.toLowerCase().includes(query.toLowerCase()) ||
+        event.eventVenue.toLowerCase().includes(query.toLowerCase())
       );
       setFilteredEvents(filtered);
     }
