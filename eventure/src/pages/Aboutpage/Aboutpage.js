@@ -39,7 +39,6 @@ const Aboutpage = () => {
           </p>
         </div>
 
-        {/* Change the order here for smaller screens */}
         <div className="formContainer">
         <div className="aboutUsRightContent">
           <h2>Contact Us</h2>
@@ -48,7 +47,6 @@ const Aboutpage = () => {
         </div>
 
         
-        {/* Employee Section moved under the text */}
         <div className="aboutUsEmployeeContainer">
           <div className="employee">
             <img src="/placeholderEmployee.jpg" alt="Kalle, IT Manager at Eventure" />
