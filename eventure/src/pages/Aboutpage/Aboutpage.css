@@ -1,53 +1,172 @@
+:root {
+  --primary-color: #007BFF;
+  --primary-color-hover: #0056b3;
+  --border-color: #ccc;
+  --text-color: #333;
+  --padding: 2rem; 
+  --gap: 1rem; 
+  --max-width: 75rem; 
+}
 
 .aboutUsPage {
-    padding: 2rem;
+  display: flex;
+  justify-content: center;  
+  padding-bottom: 5rem;
+}
+
+.aboutUsPageContentContainer {
+  display: flex;
+  flex-wrap: wrap; 
+  max-width: var(--max-width); 
+  width: 100%;
+}
+
+.aboutUsLeftContent {
+  flex: 1;
+  padding: calc(var(--padding) / 2); 
+}
+
+.aboutUsRightContent {
+  flex: 1;
+  padding: calc(var(--padding) / 2); 
 }
 
 .aboutUsHeader {
-    text-align: center;
-    font-size: 3rem;
+  text-align: center;
+  font-size: 2.5rem; 
 }
 
-.employee-container {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 2rem;
-  }
-  
-  .employee {
-    text-align: center;
-  }
-  
-  .employee img {
-    width: 20vw; 
-    height: auto;
-    max-width: 200px;
-    max-height: 200px; 
-    border-radius: 50%;
-    object-fit: cover;
-    border: 3px solid #ccc;
-  }
-  
-  .employee p {
-    margin-top: 1rem; 
-    font-size: 1rem; 
-    color: #333;
-  }
-  
-  .jobTitle {
-    font-weight: bold;
-  }
-  
-  .contactSymbols {
-    width: 20vw; 
-    height: auto;
-    max-width: 20px;
-    max-height: 20px; 
-    object-fit: cover;
-    vertical-align: middle; 
-    margin-top: -4px; 
+.aboutUsEmployeeContainer {
+  display: flex; 
+  flex-direction: row; 
+  flex-wrap: nowrap; /* Prevent wrapping */
+  justify-content: flex-start; /* Align to start */
+  margin-top: -3rem; /* 32px */
+  width: 100%;
+}
+
+.employee {
+  text-align: center;
+  margin: 0 1rem; /* 16px */
+  flex: 0 0 10%; /* Allow up to 10% of the width, adjust as needed */
+  min-width: 80px; /* Minimum width to prevent too small */
+}
+
+.employee img {
+  width: 7.5rem; /* 120px */
+  height: auto;
+  max-width: 9.375rem; /* 150px */
+  max-height: 9.375rem; /* 150px */
+  border-radius: 50%;
+  object-fit: cover;
+  border: 0.1875rem solid var(--border-color); /* 3px */
+  margin-top: -3.75rem; /* -60px */
+}
+
+.employee p {
+  margin-top: 0.5rem; /* 8px */
+  font-size: 0.9rem; /* 14.4px */
+  color: var(--text-color);
+}
+
+.jobTitle {
+  font-weight: bold;
+  font-size: 0.8rem;
+  margin-bottom: 9.375rem; 
+}
+
+.formContainer {
+  border: 1px solid var(--border-color); 
+  border-radius: 0.25rem;
+  padding: 1rem;
+  margin-top: 2rem; 
+  display: flex;
+  flex-direction: column; 
+  width: 100%; 
+  max-width: 600px; 
+}
+form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+}
+
+form div {
+  display: flex;
+  flex-direction: column;
+}
+
+form label {
+  font-weight: bold;
+}
+
+form input,
+form select,
+form button {
+  padding: 0.5rem; 
+  font-size: 1rem; 
+  border: 0.0625rem solid var(--border-color); 
+  border-radius: 0.25rem; 
+}
+
+form button {
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem 0.625rem; 
+  align-self: flex-start;
+}
+
+form button:hover {
+  background-color: var(--primary-color-hover);
+}
+
+@media (max-width: 48rem) { 
+  .aboutUsPageContentContainer {
+    flex-direction: column; 
+    padding: 0; 
   }
 
-  .joinTheTeam {
-    margin-left:20px
+  .aboutUsLeftContent {
+    width: 100%; 
+    padding: 0; 
   }
+
+  .aboutUsRightContent {
+    width: 100%; 
+    padding: 0; 
+  }
+
+  .aboutUsEmployeeContainer {
+    flex-direction: row; 
+    justify-content: center;
+    align-items: flex-start; 
+    width: 100%; 
+    margin: 0; 
+  }
+
+  .employee {
+    margin: 0 0.5rem; 
+    flex: 0 0 20%; 
+    min-width: 80px; 
+  }
+
+  .employee img {
+    width: 5rem; 
+    height: 5rem; 
+    max-height: 5rem;
+    max-width: 5rem;
+    object-fit: cover;
+    margin-top: 50px;
+  }
+
+  .employee p {
+    font-size: 0.75rem; 
+  }
+
+  .jobTitle {
+    font-size: 0.7rem; 
+    padding-bottom: 6rem;
+  }
+}
