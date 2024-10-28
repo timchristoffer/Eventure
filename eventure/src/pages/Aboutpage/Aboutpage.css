@@ -39,33 +39,33 @@
 .aboutUsEmployeeContainer {
   display: flex; 
   flex-direction: row; 
-  flex-wrap: nowrap; /* Prevent wrapping */
-  justify-content: flex-start; /* Align to start */
-  margin-top: -3rem; /* 32px */
+  flex-wrap: nowrap; 
+  justify-content: flex-start; 
+  margin-top: -3rem; 
   width: 100%;
 }
 
 .employee {
   text-align: center;
-  margin: 0 1rem; /* 16px */
-  flex: 0 0 10%; /* Allow up to 10% of the width, adjust as needed */
-  min-width: 80px; /* Minimum width to prevent too small */
+  margin: 0 1rem;
+  flex: 0 0 10%; 
+  min-width: 80px; 
 }
 
 .employee img {
-  width: 7.5rem; /* 120px */
+  width: 7.5rem; 
   height: auto;
-  max-width: 9.375rem; /* 150px */
-  max-height: 9.375rem; /* 150px */
+  max-width: 9.375rem; 
+  max-height: 9.375rem; 
   border-radius: 50%;
   object-fit: cover;
-  border: 0.1875rem solid var(--border-color); /* 3px */
-  margin-top: -3.75rem; /* -60px */
+  border: 0.1875rem solid var(--border-color); 
+  margin-top: -3.75rem;
 }
 
 .employee p {
-  margin-top: 0.5rem; /* 8px */
-  font-size: 0.9rem; /* 14.4px */
+  margin-top: 0.5rem;
+  font-size: 0.9rem; 
   color: var(--text-color);
 }
 
