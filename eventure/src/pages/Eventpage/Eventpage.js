@@ -1,18 +1,19 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
-import { useLocation } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import './Eventpage.css'
 
 const Eventpage = () => {
 
   const [event, setEvent] = useState(null)
-  const location = useLocation();
-  const id = location.state?.id;
+  const { documentId } = useParams();
+
+  console.log(documentId)
 
   useEffect(() => {
     const getData = async () => {
       try {
-        const response = await axios.get(`http://localhost:1337/api/events/${id}?populate=*`);
+        const response = await axios.get(`http://localhost:1337/api/events/${documentId}?populate=*`);
         console.log("Response data:", response.data);
         setEvent(response.data.data);
       } catch (error) {
@@ -22,16 +23,16 @@ const Eventpage = () => {
     };
     
     getData();
-  }, []);
+  }, [documentId]);
 
   console.log(event)
-  console.log(id)
+  console.log(documentId)
   if (!event) {
     return <div className='loading-message'>Loading...</div>; 
   }
 
   const eventImg = event.eventPicture?.url 
-  ? `http://localhost:1337${event.eventPicture.url}`
+  ? `http://localhost:1337/${event.eventPicture.url}`
   : ''
 
   const description = event.eventDescription.map((paragraph) =>
@@ -61,22 +62,29 @@ const Eventpage = () => {
 
   return (
     <div>
-      <h1>Eventpage</h1>
-      <h1 className='event-title'>{event.eventTitle}</h1>
+      <h2 className='event-title'>{event.eventTitle}</h2>
       <div className='event-container'>
-        {eventImg && <img 
-          src={eventImg} 
-          alt={event.eventTitle} 
-          className='event-img' 
-          onError={(e) => console.error('Image load error:', e)} 
-        />}
-        <p className='event-description'>{description}</p>
+          <div className='event-presentation'>
+          {eventImg && <img 
+            src={eventImg} 
+            alt={event.eventTitle} 
+            className='event-img' 
+            onError={(e) => console.error('Image load error:', e)} 
+          />}
+          
+          <p className='event-description'>{description}</p>
+        </div>
         <div className='event-info'>
-          <p><b>Datum: </b>{readableEventTime}</p>
+          <p><b>Tidpunkt: </b>{readableEventTime}</p>
           <p><b>Plats: </b>{event.eventVenue}</p>
           <p><b>Pris från: </b>{event.eventPrice} kr</p>
-          <p><b>Värd:  </b>{event.host.hostName} <em>({event.host.hostContact})</em></p>
-
+          <p><b>Värd:  </b>
+            <Link 
+            to={`/host/${event.host.documentId}`}
+            key={event.host.id}
+            >
+              {event.host.hostName}
+          </Link></p>
         </div>
       </div>
     </div>

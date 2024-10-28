@@ -18,9 +18,9 @@ function App() {
         <header className="App-header">
         </header>
         <Routes>
-          <Route path="/host" element={<Hostpage />} />
+          <Route path="/host/:documentId" element={<Hostpage />} />
           <Route path="/about" element={<Aboutpage />} />
-          <Route path="/event" element={<Eventpage />} />
+          <Route path="/event/:documentId" element={<Eventpage />} />
           <Route path="/search" element={<Searchpage />} />
           <Route path="/" element={<Homepage />} />
         </Routes>
