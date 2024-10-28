@@ -49,23 +49,23 @@ const Aboutpage = () => {
         
         <div className="aboutUsEmployeeContainer">
           <div className="employee">
-            <img src="/placeholderEmployee.jpg" alt="Kalle, IT Manager at Eventure" />
-            <p>Kalle</p>
+            <img src="/employeeAvatar1.png" alt="Kalle, IT Manager at Eventure" />
+            <p>Maria</p>
             <p className="jobTitle">IT Manager</p>
           </div>
           <div className="employee">
-            <img src="/placeholderEmployee.jpg" alt="Linus, Product Manager at Eventure" />
-            <p>Linus</p>
+            <img src="/employeeAvatar2.png" alt="Linus, Product Manager at Eventure" />
+            <p>Helen</p>
             <p className="jobTitle">Product Manager</p>
           </div>
           <div className="employee">
-            <img src="/placeholderEmployee.jpg" alt="Oliver, Quality Assurance at Eventure" />
-            <p>Oliver</p>
+            <img src="/employeeAvatar3.png" alt="Oliver, Quality Assurance at Eventure" />
+            <p>Lucas</p>
             <p className="jobTitle">Quality Assurance</p>
           </div>
           <div className="employee">
-            <img src="/placeholderEmployee.jpg" alt="Tim, Software Architect at Eventure" />
-            <p>Tim</p>
+            <img src="/employeeAvatar4.png" alt="Tim, Software Architect at Eventure" />
+            <p>Tommy</p>
             <p className="jobTitle">Software Architect</p>
           </div>
         </div>

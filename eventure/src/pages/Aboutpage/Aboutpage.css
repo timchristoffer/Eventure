@@ -1,172 +1,212 @@
-:root {
-  --primary-color: #007BFF;
-  --primary-color-hover: #0056b3;
-  --border-color: #ccc;
-  --text-color: #333;
-  --padding: 2rem; 
-  --gap: 1rem; 
-  --max-width: 75rem; 
-}
+  :root[data-theme="light"] {
+    --text: #171717;
+    --secondary-text: #e8e8e8;
+    --background: #e0dacd;
+    --primary: #ffa91f;
+    --primary-hover: #e08a00;
+    --secondary: #b8b8b8;
+    --accent: #4d4d4d;
+    --padding: 2rem; 
+    --gap: 1rem; 
+    --max-width: 75rem; 
+  }
+  :root[data-theme="dark"] {
+    --text: #e8e8e8;
+    --secondary-text: #171717;
+    --background: #121212;
+    --primary: #e08a00;
+    --primary-hover:#ffa91f;
+    --secondary: #474747;
+    --accent: #b3b3b3;
+    --padding: 2rem; 
+    --gap: 1rem; 
+    --max-width: 75rem; 
+  } 
+  
+  .aboutUsPage {
+    display: flex;
+    justify-content: center;  
+    padding-bottom: 5rem;
+  }
 
-.aboutUsPage {
-  display: flex;
-  justify-content: center;  
-  padding-bottom: 5rem;
-}
-
-.aboutUsPageContentContainer {
-  display: flex;
-  flex-wrap: wrap; 
-  max-width: var(--max-width); 
-  width: 100%;
-}
-
-.aboutUsLeftContent {
-  flex: 1;
-  padding: calc(var(--padding) / 2); 
-}
-
-.aboutUsRightContent {
-  flex: 1;
-  padding: calc(var(--padding) / 2); 
-}
-
-.aboutUsHeader {
-  text-align: center;
-  font-size: 2.5rem; 
-}
-
-.aboutUsEmployeeContainer {
-  display: flex; 
-  flex-direction: row; 
-  flex-wrap: nowrap; 
-  justify-content: flex-start; 
-  margin-top: -3rem; 
-  width: 100%;
-}
-
-.employee {
-  text-align: center;
-  margin: 0 1rem;
-  flex: 0 0 10%; 
-  min-width: 80px; 
-}
-
-.employee img {
-  width: 7.5rem; 
-  height: auto;
-  max-width: 9.375rem; 
-  max-height: 9.375rem; 
-  border-radius: 50%;
-  object-fit: cover;
-  border: 0.1875rem solid var(--border-color); 
-  margin-top: -3.75rem;
-}
-
-.employee p {
-  margin-top: 0.5rem;
-  font-size: 0.9rem; 
-  color: var(--text-color);
-}
-
-.jobTitle {
-  font-weight: bold;
-  font-size: 0.8rem;
-  margin-bottom: 9.375rem; 
-}
-
-.formContainer {
-  border: 1px solid var(--border-color); 
-  border-radius: 0.25rem;
-  padding: 1rem;
-  margin-top: 2rem; 
-  display: flex;
-  flex-direction: column; 
-  width: 100%; 
-  max-width: 600px; 
-}
-form {
-  display: flex;
-  flex-direction: column;
-  gap: var(--gap);
-}
-
-form div {
-  display: flex;
-  flex-direction: column;
-}
-
-form label {
-  font-weight: bold;
-}
-
-form input,
-form select,
-form button {
-  padding: 0.5rem; 
-  font-size: 1rem; 
-  border: 0.0625rem solid var(--border-color); 
-  border-radius: 0.25rem; 
-}
-
-form button {
-  background-color: var(--primary-color);
-  color: #fff;
-  border: none;
-  cursor: pointer;
-  padding: 0.5rem 0.625rem; 
-  align-self: flex-start;
-}
-
-form button:hover {
-  background-color: var(--primary-color-hover);
-}
-
-@media (max-width: 48rem) { 
   .aboutUsPageContentContainer {
-    flex-direction: column; 
-    padding: 0; 
+    display: flex;
+    flex-wrap: wrap; 
+    max-width: var(--max-width); 
+    width: 100%;
   }
 
   .aboutUsLeftContent {
-    width: 100%; 
-    padding: 0; 
+    flex: 1;
+    padding: calc(var(--padding) / 2); 
   }
 
   .aboutUsRightContent {
-    width: 100%; 
-    padding: 0; 
+    flex: 1;
+    padding: calc(var(--padding) / 2); 
+  }
+
+  .aboutUsHeader {
+    text-align: center;
+    font-size: 2.5rem; 
   }
 
   .aboutUsEmployeeContainer {
+    display: flex; 
     flex-direction: row; 
-    justify-content: center;
-    align-items: flex-start; 
-    width: 100%; 
-    margin: 0; 
+    flex-wrap: nowrap; 
+    justify-content: flex-start; 
+    margin-top: -3rem; 
+    width: 100%;
   }
 
   .employee {
-    margin: 0 0.5rem; 
-    flex: 0 0 20%; 
+    text-align: center;
+    margin: 0 1rem;
+    flex: 0 0 10%; 
     min-width: 80px; 
   }
 
   .employee img {
-    width: 5rem; 
-    height: 5rem; 
-    max-height: 5rem;
-    max-width: 5rem;
+    width: 7.5rem; 
+    height: auto;
+    max-width: 9.375rem; 
+    max-height: 9.375rem; 
+    border-radius: 50%;
     object-fit: cover;
-    margin-top: 50px;
+    border: 0.1875rem solid var(--primary); 
+    margin-top: -3.75rem;
+    padding: 0.25rem;
   }
 
   .employee p {
-    font-size: 0.75rem; 
+    margin-top: 0.5rem;
+    font-size: 0.9rem; 
+    color: var(--text);
   }
 
   .jobTitle {
-    font-size: 0.7rem; 
-    padding-bottom: 6rem;
+    font-weight: bold;
+    font-size: 0.8rem;
+    margin-bottom: 9.375rem; 
   }
+
+  .formContainer {
+    border: 0.5rem solid var(--primary); 
+    border-radius: 2rem; 
+    padding: 1rem;
+    margin-top: 2rem; 
+    display: flex;
+    flex-direction: column; 
+    width: 100%; 
+    max-width: 600px; 
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap);
+  }
+
+  form div {
+    display: flex;
+    flex-direction: column;
+  }
+
+  form label {
+    font-weight: bold;
+  }
+
+  form input {
+  background-color: var(--background);
+  color: var(--text);
+  border: 0.2rem solid var(--primary);
+  border-radius: 0.25rem;
+  padding: 0.5rem;
+  font-size: 1rem;
 }
+
+  form select {
+    background-color: var(--background);
+    color: var(--text);
+    border: 0.2rem solid var(--primary);
+    border-radius: 0.25rem;
+    padding: 0.5rem;
+    font-size: 1rem;
+}
+
+form input:focus,
+form select:focus {
+    border: 0.25rem solid var(--primary-hover); 
+    outline: none; 
+    padding: -0.05rem;
+}
+
+  form button {
+    padding: 0.5rem; 
+    font-size: 1rem; 
+    border: 0.0625rem solid var(--primary); 
+    border-radius: 0.25rem; 
+  }
+
+  form button {
+    background-color: var(--primary);
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem 0.625rem; 
+    align-self: flex-start;
+  }
+
+  form button:hover {
+    background-color: var(--primary-hover);
+  }
+
+
+  @media (max-width: 48rem) { 
+    .aboutUsPageContentContainer {
+      flex-direction: column; 
+      padding: 0; 
+    }
+
+    .aboutUsLeftContent {
+      width: 100%; 
+      padding: 0; 
+    }
+
+    .aboutUsRightContent {
+      width: 100%; 
+      padding: 0; 
+    }
+
+    .aboutUsEmployeeContainer {
+      flex-direction: row; 
+      justify-content: center;
+      align-items: flex-start; 
+      width: 100%; 
+      margin: 0; 
+    }
+
+    .employee {
+      margin: 0 0.5rem; 
+      flex: 0 0 20%; 
+      min-width: 80px; 
+    }
+
+    .employee img {
+      width: 5rem; 
+      height: 5rem; 
+      max-height: 5rem;
+      max-width: 5rem;
+      object-fit: cover;
+      margin-top: 50px;
+    }
+
+    .employee p {
+      font-size: 0.75rem; 
+    }
+
+    .jobTitle {
+      font-size: 0.7rem; 
+      padding-bottom: 6rem;
+    }
+  }
