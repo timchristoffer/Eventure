@@ -23,7 +23,6 @@ const Navbar = () => {
       <div className={`navbar-links ${isOpen ? 'open' : ''}`}>
         <Link to="/hosts">Hosts</Link>
         <Link to="/search">Search</Link>
-        <Link to="/host">Hosts</Link>
         <Link to="/about">About</Link>
       </div>
       <div id="nav-icon3" className={isOpen ? 'open' : ''} onClick={toggleMenu}>
