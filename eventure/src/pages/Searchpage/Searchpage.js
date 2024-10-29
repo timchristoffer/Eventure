@@ -43,6 +43,7 @@ const Searchpage = () => {
         <Link 
           to={`/event/${event.documentId}`}
           key={event.id}
+          alt={`link to event: ${event.eventTitle}`}
         >
           <EventCard event={event} />
         </Link>
