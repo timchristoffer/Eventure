@@ -1,70 +1,66 @@
 .theme-switch-wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .theme-toggle {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 6px;
-    width: 80px; 
-    height: 80px; 
-    background: var(--switch-bg);
-    border: none;
-    cursor: pointer;
-    position: fixed; 
-    top: 20px;
-    right: 20px;
-    transition: background-color 0.4s;
-    z-index: 1000;
-  }
-  
-  .theme-toggle-sr {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    border: 0;
-  }
-  
-  .theme-toggle__expand,
-  .theme-toggle__collapse {
-    width: 2em; 
-    height: 2em; 
-    fill: currentColor;
-    transition: opacity 0.4s, transform 0.4s;
-  }
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-  .theme-toggle__expand{
-    fill: var(--primary);
-  }
-  
-  .theme-toggle__collapse {
-    position: absolute;
-    opacity: 0;
-    transform: rotate(180deg);
-  }
-  
-  .theme-toggle--toggled .theme-toggle__expand {
-    opacity: 0;
-    transform: rotate(180deg);
-  }
-  
-  .theme-toggle--toggled .theme-toggle__collapse {
-    opacity: 1;
-    transform: rotate(0deg);
-  }
-  
-  .theme-toggle--toggled {
-    background: var(--color-back);
-  }
-  
-  .theme-toggle--toggled .theme-toggle__expand,
-  .theme-toggle--toggled .theme-toggle__collapse {
-    color: var(--color-front);
-  }
+.theme-toggle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px; 
+  height: 50px; 
+  background: var(--switch-bg);
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.4s;
+  z-index: 1000;
+}
+
+.theme-toggle-sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.theme-toggle__expand,
+.theme-toggle__collapse {
+  width: 1.5em; 
+  height: 1.5em; 
+  fill: currentColor;
+  transition: opacity 0.4s, transform 0.4s;
+}
+
+.theme-toggle__expand {
+  fill: var(--color-front);
+}
+
+.theme-toggle__collapse {
+  position: absolute;
+  opacity: 0;
+  transform: rotate(180deg);
+}
+
+.theme-toggle--toggled .theme-toggle__expand {
+  opacity: 0;
+  transform: rotate(180deg);
+}
+
+.theme-toggle--toggled .theme-toggle__collapse {
+  opacity: 1;
+  transform: rotate(0deg);
+}
+
+.theme-toggle--toggled {
+  background: var(--color-back);
+}
+
+.theme-toggle--toggled .theme-toggle__expand,
+.theme-toggle--toggled .theme-toggle__collapse {
+  color: var(--color-front);
+}
