@@ -43,11 +43,10 @@ const HeroSlider = () => {
           return (
             <div className='heroItem' key={event.id}>
               <Link 
-                to="/event"
-                state={{ id: event.documentId }}
+                to={`/event/${event.documentId}`}
                 key={event.id}
               >
-              {imageUrl && <img src={imageUrl} alt={event.eventTitle} onError={(e) => console.error('Image load error:', e)} />}
+              {imageUrl && <img src={imageUrl} className='heroImg' alt={event.eventTitle} onError={(e) => console.error('Image load error:', e)} />}
               <div className="heroInfo">
                 <h3>{event.eventTitle}</h3>
                 <p>

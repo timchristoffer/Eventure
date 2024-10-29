@@ -42,8 +42,8 @@ const Hostpage = () => {
   const events = host.events.map(event => 
       <div className='event-thumbnail'>
         <Link 
-      to={`/event/${event.documentId}`}
-      key={event.id}
+          to={`/event/${event.documentId}`}
+          key={event.id}
         >
         <EventCard event={event} />
         </Link> 

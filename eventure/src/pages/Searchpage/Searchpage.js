@@ -41,8 +41,7 @@ const Searchpage = () => {
       <div>
         {filteredEvents.map((event) => (
         <Link 
-          to="/event"
-          state={{ id: event.documentId }}
+          to={`/event/${event.documentId}`}
           key={event.id}
         >
           <EventCard event={event} />
