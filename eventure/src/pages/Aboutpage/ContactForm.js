@@ -86,6 +86,7 @@
             <option value="support">Support</option>
             <option value="feedback">Feedback</option>
             <option value="inquiry">General Inquiry</option>
+            <option value="job application">Job Application</option>
             <option value="other">Other</option>
             </select>
         </div>
