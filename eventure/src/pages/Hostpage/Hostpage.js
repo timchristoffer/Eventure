@@ -64,8 +64,8 @@ const Hostpage = () => {
           />}
           <p className='host-description'>{host.hostBio}</p>
           <br/>
-        <h3>{host.hostName}s Events</h3>
         </div>
+        <h3>Events hosted by {host.hostName}</h3>
         <div className='host-events'>
           {events}
         </div>

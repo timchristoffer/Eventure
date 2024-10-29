@@ -45,6 +45,7 @@ const HeroSlider = () => {
               <Link 
                 to={`/event/${event.documentId}`}
                 key={event.id}
+                alt={`link to event: ${event.eventTitle}`}
               >
               {imageUrl && <img src={imageUrl} className='heroImg' alt={event.eventTitle} onError={(e) => console.error('Image load error:', e)} />}
               <div className="heroInfo">
