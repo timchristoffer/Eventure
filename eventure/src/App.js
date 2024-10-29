@@ -7,6 +7,7 @@ import Homepage from './pages/Homepage/Homepage';
 import Searchpage from './pages/Searchpage/Searchpage';
 import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Footer/Footer';
+import AllHostspage from './pages/AllHostspage/AllHostspage';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Routes>
           <Route path="/host/:documentId" element={<Hostpage />} />
           <Route path="/about" element={<Aboutpage />} />
+          <Route path="/hosts" element={<AllHostspage />} />
           <Route path="/event/:documentId" element={<Eventpage />} />
           <Route path="/search" element={<Searchpage />} />
           <Route path="/" element={<Homepage />} />
