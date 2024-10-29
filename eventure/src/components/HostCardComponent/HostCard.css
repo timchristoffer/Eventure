@@ -14,10 +14,14 @@
     }
 }
 
-
-.host-card:hover{
-    background-color: var(--secondary);
+@media screen and (min-width: 621px) {
+    .host-card:hover{
+        background-color: var(--secondary);
+        transition: 0.2s;
+    }
 }
+
+
 
 .host-img{
     max-width: 400px;

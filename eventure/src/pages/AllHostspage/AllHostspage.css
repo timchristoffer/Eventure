@@ -10,8 +10,3 @@
     width: 80%;
     flex-wrap: wrap;
 }
-@media screen and (max-width: 620px){
-    .allHosts-container{
-        flex-direction: column;
-    }
-}
