@@ -27,6 +27,8 @@
     display: flex;
     justify-content: center;  
     padding-bottom: 5rem;
+    overflow-x: hidden; 
+    box-sizing: border-box; 
   }
 
   .aboutUsPageContentContainer {
@@ -34,6 +36,7 @@
     flex-wrap: wrap; 
     max-width: var(--max-width); 
     width: 100%;
+  
   }
 
   .aboutUsLeftContent {
@@ -100,6 +103,8 @@
     flex-direction: column; 
     width: 100%; 
     max-width: 600px; 
+    justify-content:baseline;
+
   }
 
   form {
@@ -161,21 +166,119 @@ form select:focus {
     background-color: var(--primary-hover);
   }
 
+  @media (max-width: 64rem) {
+    .aboutUsPage {
+      display: flex;
+      justify-content: center;  
+      padding-bottom: 5rem;
+      overflow-x: hidden; 
+      box-sizing: border-box; 
+    }
+    .aboutUsEmployeeContainer {
+      flex-direction: row; 
+      justify-content: center;
+      align-items: flex-start; 
+      width: 40%; 
+      margin: 0; 
+    }
+    .employee {
+      text-align: center;
+      margin: 0 1rem;
+      flex: 0 0 10%; 
+      min-width: 80px; 
+      margin-left: -0.5rem;
+    }
+  
+    .employee img {
+      width: 4.5rem; 
+      height: auto;
+      max-width: 9.375rem; 
+      max-height: 9.375rem; 
+      border-radius: 50%;
+      object-fit: cover;
+      border: 0.2rem solid var(--primary); 
+      margin-top: -3.75rem;
+      padding: 0.25rem;
+    }
+  
+    .employee p {
+      margin-top: 0.5rem;
+      font-size: 0.9rem; 
+      color: var(--text);
+    }
+  
+  }
+  
+  @media (max-width: 60rem) {
+    .aboutUsPage {
+      display: flex;
+      justify-content: center;  
+      padding-bottom: 5rem;
+      overflow-x: hidden; 
+      box-sizing: border-box; 
+    }
+    .aboutUsEmployeeContainer {
+      flex-direction: row; 
+      justify-content: center;
+      align-items: flex-start; 
+      width: 100%; 
+      margin: 0; 
+      padding-top: 5rem;
+      padding-bottom: 5rem;
+      padding-left: 1.5rem
+    }
+  }
 
+  @media (max-width: 55rem) {
+    .aboutUsPage {
+      display: flex;
+      justify-content: center;  
+      padding-bottom: 5rem;
+      overflow-x: hidden; 
+      box-sizing: border-box; 
+      padding-left: 5rem;
+    }
+    .aboutUsEmployeeContainer {
+      flex-direction: row; 
+      justify-content: center;
+      align-items: flex-start; 
+      width: 100%; 
+      margin: 0; 
+      padding-right: 5rem;
+    }
+  }
+  
+
+
+  @media (max-width: 50rem) {
+    .aboutUsPage {
+      display: flex;
+      justify-content: center;  
+      padding-bottom: 5rem;
+      overflow-x: hidden; 
+      box-sizing: border-box; 
+      padding-left: 3.5rem;
+    }
+    .aboutUsEmployeeContainer {
+      flex-direction: row; 
+      justify-content: center;
+      align-items: flex-start; 
+      width: 100%; 
+      margin: 0; 
+      padding-right: 3rem;
+    }
+    
+  }
+  
   @media (max-width: 48rem) { 
-    .aboutUsPageContentContainer {
-      flex-direction: column; 
-      padding: 0; 
-    }
 
-    .aboutUsLeftContent {
-      width: 100%; 
-      padding: 0; 
-    }
-
-    .aboutUsRightContent {
-      width: 100%; 
-      padding: 0; 
+    .aboutUsPage {
+      display: flex;
+      justify-content: center;  
+      padding-bottom: 5rem;
+      overflow-x: hidden; 
+      box-sizing: border-box; 
+      padding-left: 0.5rem;
     }
 
     .aboutUsEmployeeContainer {
@@ -184,29 +287,45 @@ form select:focus {
       align-items: flex-start; 
       width: 100%; 
       margin: 0; 
-    }
-
-    .employee {
-      margin: 0 0.5rem; 
-      flex: 0 0 20%; 
-      min-width: 80px; 
-    }
-
-    .employee img {
-      width: 5rem; 
-      height: 5rem; 
-      max-height: 5rem;
-      max-width: 5rem;
-      object-fit: cover;
-      margin-top: 50px;
-    }
-
-    .employee p {
-      font-size: 0.75rem; 
-    }
-
-    .jobTitle {
-      font-size: 0.7rem; 
-      padding-bottom: 6rem;
+      padding-right: 0.75rem;
     }
   }
+
+  
+@media (max-width: 25rem) {
+  .aboutUsPage {
+    display: flex;
+    justify-content: center;  
+    padding-bottom: 5rem;
+    overflow-x: hidden; 
+    box-sizing: border-box; 
+    padding-left: 2rem;
+  }
+  .aboutUsEmployeeContainer {
+    flex-direction: row; 
+    justify-content: center;
+    align-items: flex-start; 
+    width: 100%; 
+    margin: 0; 
+  }
+}
+
+
+@media (max-width: 23.75rem) {
+  .aboutUsPage {
+    display: flex;
+    justify-content: center;  
+    padding-bottom: 5rem;
+    overflow-x: hidden; 
+    box-sizing: border-box; 
+    padding-left: 4rem;
+  }
+  .aboutUsEmployeeContainer {
+    flex-direction: row; 
+    justify-content: center;
+    align-items: flex-start; 
+    width: 100%; 
+    margin: 0;
+    margin-left: 0.6rem;
+  }
+}
