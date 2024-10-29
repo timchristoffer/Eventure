@@ -1,6 +1,6 @@
 import React from 'react';
 import './HomeHeader.css';
-import InnerImage from '../../assets/header/inner-image.jpg'; // Importera en extra bild
+import InnerImage from '../../assets/header/inner-image.jpg';
 
 const HomeHeader = () => {
   return (

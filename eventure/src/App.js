@@ -13,15 +13,15 @@ function App() {
     <Router>
       <div className="App">
         <Navbar />
-        <header className="App-header">
-        </header>
-        <Routes>
-          <Route path="/host/:documentId" element={<Hostpage />} />
-          <Route path="/about" element={<Aboutpage />} />
-          <Route path="/event/:documentId" element={<Eventpage />} />
-          <Route path="/search" element={<Searchpage />} />
-          <Route path="/" element={<Homepage />} />
-        </Routes>
+        <div className="content-wrapper">
+          <Routes>
+            <Route path="/host/:documentId" element={<Hostpage />} />
+            <Route path="/about" element={<Aboutpage />} />
+            <Route path="/event/:documentId" element={<Eventpage />} />
+            <Route path="/search" element={<Searchpage />} />
+            <Route path="/" element={<Homepage />} />
+          </Routes>
+        </div>
         <Footer />
       </div>
     </Router>
