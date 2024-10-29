@@ -24,6 +24,24 @@
     --max-width: 75rem;
   }
 
+  :root[data-theme="light"] input:-webkit-autofill,
+  :root[data-theme="light"] input:-webkit-autofill:hover,
+  :root[data-theme="light"] input:-webkit-autofill:focus,
+  :root[data-theme="light"] input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px var(--background) inset !important;
+    -webkit-text-fill-color: var(--text) !important;
+    transition: background-color 5000s ease-in-out 0s;
+  }
+
+  :root[data-theme="dark"] input:-webkit-autofill,
+  :root[data-theme="dark"] input:-webkit-autofill:hover,
+  :root[data-theme="dark"] input:-webkit-autofill:focus,
+  :root[data-theme="dark"] input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px var(--background) inset !important;
+    -webkit-text-fill-color: var(--text) !important;
+    transition: background-color 5000s ease-in-out 0s;
+  }
+
   .aboutUsPage {
     display: flex;
     justify-content: center;
@@ -57,29 +75,30 @@
   }
 
 
-* {
-  box-sizing: border-box; 
-}
+  * {
+    box-sizing: border-box;
+  }
 
-.aboutUsEmployeeContainer {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: flex-start;
-  margin-top: 34.375rem;
-  width: 100%; 
-  max-width: 100%;
-  position: absolute; 
-  left: 0; 
-  padding-left: 11.5rem;
-  gap: 1.25rem; 
-}
+  .aboutUsEmployeeContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    margin-top: 34.375rem;
+    width: 100%;
+    max-width: 100%;
+    position: absolute;
+    left: 0;
+    padding-left: 11.5rem;
+    gap: 1.25rem;
+  }
 
 
-.aboutUsEmployeeContainer > * {
-  flex-shrink: 1; 
-  max-width: 100%; 
-}
+  .aboutUsEmployeeContainer>* {
+    flex-shrink: 1;
+    max-width: 100%;
+  }
+
   .employee {
     text-align: center;
     margin: 0 1rem;
@@ -172,7 +191,6 @@
   form textarea:focus {
     border: 0.25rem solid var(--primary-hover);
     outline: none;
-    margin: -0.05rem;
   }
 
   form input:focus,
@@ -187,6 +205,7 @@
     font-size: 1rem;
     border: 0.0625rem solid var(--primary);
     border-radius: 0.25rem;
+    font-weight: bold;
   }
 
   form button {
@@ -195,6 +214,7 @@
     cursor: pointer;
     padding: 0.5rem 0.625rem;
     align-self: flex-start;
+    
   }
 
   form button:hover {
@@ -245,6 +265,7 @@
       font-size: 0.9rem;
       color: var(--text);
     }
+
     .formContainer {
       border: 0.5rem solid var(--primary);
       border-radius: 2rem;
