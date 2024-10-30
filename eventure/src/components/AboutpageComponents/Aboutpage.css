@@ -261,12 +261,6 @@
       padding: 0.25rem;
     }
 
-    .employee p {
-      margin-top: 0.5rem;
-      font-size: 0.9rem;
-      color: var(--text);
-    }
-
     .formContainer {
       border: 0.5rem solid var(--primary);
       border-radius: 2rem;
@@ -323,13 +317,6 @@
       margin-top: 1rem;
       padding: 0.25rem;
     }
-
-    .employee p {
-      margin-top: 0.5rem;
-      font-size: 0.9rem;
-      color: var(--text);
-    }
-
   }
 
 
@@ -371,13 +358,6 @@
       margin-top: 1rem;
       padding: 0.25rem;
     }
-
-    .employee p {
-      margin-top: 0.5rem;
-      font-size: 0.9rem;
-      color: var(--text);
-    }
-
   }
 
   @media (max-width: 64rem) {
@@ -420,12 +400,6 @@
       padding: 0.25rem;
     }
 
-    .employee p {
-      margin-top: 0.5rem;
-      font-size: 0.9rem;
-      color: var(--text);
-    }
-
   }
 
   @media (max-width: 62rem) {
@@ -466,12 +440,6 @@
       border: 0.2rem solid var(--primary);
       margin-top: -1.75rem;
       padding: 0.25rem;
-    }
-
-    .employee p {
-      margin-top: 0.5rem;
-      font-size: 0.9rem;
-      color: var(--text);
     }
 
   }
@@ -523,11 +491,6 @@
       margin-top: -1.75rem;
     }
 
-    .employee p {
-      margin-top: 0.5rem;
-      font-size: 0.9rem;
-      color: var(--text);
-    }
 
   }
 
@@ -569,13 +532,6 @@
       margin-top: -1.75rem;
       padding: 0.25rem;
     }
-
-    .employee p {
-      margin-top: 0.5rem;
-      font-size: 0.9rem;
-      color: var(--text);
-    }
-
   }
 
   @media (max-width: 48rem) {
@@ -614,12 +570,6 @@
       border: 0.2rem solid var(--primary);
       margin-top: -1.75rem;
       padding: 0.25rem;
-    }
-
-    .employee p {
-      margin-top: 0.5rem;
-      font-size: 0.9rem;
-      color: var(--text);
     }
 
   }
@@ -663,12 +613,6 @@
       padding: 0.25rem;
     }
 
-    .employee p {
-      margin-top: 0.5rem;
-      font-size: 0.9rem;
-      color: var(--text);
-    }
-
   }
 
 
@@ -709,11 +653,6 @@
       padding: 0.25rem;
     }
 
-    .employee p {
-      margin-top: 0.5rem;
-      font-size: 0.9rem;
-      color: var(--text);
-    }
   }
 
 
@@ -752,11 +691,5 @@
       border: 0.2rem solid var(--primary);
       margin-top: -1.75rem;
       padding: 0.25rem;
-    }
-
-    .employee p {
-      margin-top: 0.5rem;
-      font-size: 0.9rem;
-      color: var(--text);
     }
   }
