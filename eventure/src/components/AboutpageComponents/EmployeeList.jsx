@@ -1,19 +1,46 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Employee from './Employee';
 
 const EmployeeList = () => {
-  const employees = [
-    { name: 'Maria', title: 'IT Manager', imageSrc: '/employeeAvatar1.png', alt: 'Kalle, IT Manager at Eventure' },
-    { name: 'Helen', title: 'Product Manager', imageSrc: '/employeeAvatar2.png', alt: 'Linus, Product Manager at Eventure' },
-    { name: 'Lucas', title: 'Quality Assurance', imageSrc: '/employeeAvatar3.png', alt: 'Oliver, Quality Assurance at Eventure' },
-    { name: 'Tommy', title: 'Software Architect', imageSrc: '/employeeAvatar4.png', alt: 'Tim, Software Architect at Eventure' },    
-  ];
+  const [employees, setEmployees] = useState([]); 
+
+  useEffect(() => {
+    const fetchEmployees = async () => {
+      try {
+        const response = await fetch('http://localhost:1337/api/employees?populate=*'); 
+        const data = await response.json();
+
+        if (Array.isArray(data.data)) {
+          const formattedEmployees = data.data.map(employee => {
+            const { employeeName, employeeTitle, employeeAltText, employeeImage } = employee; 
+            
+            const imageSrc = employeeImage ? `http://localhost:1337${employeeImage.url}` : '';
+
+            return {
+              name: employeeName,
+              title: employeeTitle,
+              imageSrc: imageSrc,
+              alt: employeeAltText, 
+            };
+          });
+
+          setEmployees(formattedEmployees); 
+        } else {
+          console.error('Data structure is not as expected:', data);
+        }
+      } catch (error) {
+        console.error('Error fetching employees:', error);
+      }
+    };
+
+    fetchEmployees();
+  }, []); 
 
   return (
     <div className="aboutUsEmployeeContainer">
       {employees.map((employee, index) => (
         <Employee 
-          key={index}
+          key={index} 
           name={employee.name}
           title={employee.title}
           imageSrc={employee.imageSrc}

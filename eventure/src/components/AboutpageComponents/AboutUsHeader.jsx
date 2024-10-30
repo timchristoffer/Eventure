@@ -1,20 +1,68 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 
 const AboutUsHeader = () => {
+  const [aboutData, setAboutData] = useState({
+    aboutUsHeader: '',
+    eventureAboutUsDescription: [],
+    aboutUsHeadline1: '',
+    eventureAboutUsDescription2: [],
+    aboutUsHeadline2: '',
+  });
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get('http://localhost:1337/api/about');
+        const data = response.data.data;
+
+        if (data) {
+
+          setAboutData({
+            aboutUsHeader: data.aboutUsHeader,
+            aboutUsHeadline1: data.aboutUsHeadline1,
+            eventureAboutUsDescription: data.eventureAboutUsDescription || [],
+            aboutUsHeadline2: data.aboutUsHeadline2,
+            eventureAboutUsDescription2: data.eventureAboutUsDescription2 || [],
+          });
+        } else {
+          console.error("No data found");
+        }
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  const extractText = (descriptionArray) => {
+    return descriptionArray.map((item) => {
+      if (item.children && item.children.length > 0) {
+        return item.children.map((child) => child.text).join('');
+      }
+      return '';
+    }).join(' '); 
+  };
+
   return (
     <div className="aboutUsLeftContent column">
-      <h1 className="aboutUsHeader">About Eventure</h1>
-      <h2>What is Eventure?</h2>
+      <h1 className="aboutUsHeader">{aboutData.aboutUsHeader}</h1>
+      <h2>{aboutData.aboutUsHeadline1}</h2>
       <p>
-        Eventure is an online service which allows people and organizations to organize,
-        publish, find, and participate in different kinds of events from casual game nights at a local bar to large sports events, all on one easy-to-use page.
+        {aboutData.eventureAboutUsDescription.length > 0 ? (
+          extractText(aboutData.eventureAboutUsDescription)
+        ) : (
+          <span>No description available</span>
+        )}
       </p>
-      <h2>How can Eventure help you?</h2>
+      <h2>{aboutData.aboutUsHeadline2}</h2>
       <p>
-        Eventure helps you as an organizer by increasing visibility to potential attendees and simplifying the publishing process.
-      </p>
-      <p>
-        As an individual, Eventure helps you find various events that may interest you without having to search across multiple pages.
+        {aboutData.eventureAboutUsDescription2.length > 0 ? (
+          extractText(aboutData.eventureAboutUsDescription2)
+        ) : (
+          <span>No description available</span>
+        )}
       </p>
     </div>
   );
