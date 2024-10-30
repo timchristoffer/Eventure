@@ -71,7 +71,6 @@ const Eventpage = () => {
             className='event-img' 
             onError={(e) => console.error('Image load error:', e)} 
           />}
-          
           <p className='event-description'>{description}</p>
         </div>
         <div className='event-info'>
