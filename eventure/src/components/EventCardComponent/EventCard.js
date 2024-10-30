@@ -16,6 +16,9 @@ const EventCard = ({ event }) => {
             />}
             <h2>{event.eventTitle}</h2>
             <p>{event.eventVenue}</p>
+            <p>{event.eventPrice}kr</p>
+            <p>{event.eventTime}</p>
+            <p>{event.host.hostName}</p>
         </div>
     )
 }
