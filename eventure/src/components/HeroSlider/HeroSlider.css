@@ -1,17 +1,22 @@
-body {
+.heroContainer {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
+    width: 60vw;
+    margin: 0 auto;
+    margin-bottom: 30px;
 }
 
-img {
-    width: 200px;
+.heroImg {
+    width: 100%;
     height: 150px;
     object-fit: cover;
     border-radius: 5px;
+    transition: transform 0.5s, filter 0.5s;
 }
 
-.heroTitle{
+.heroTitle {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -30,40 +35,47 @@ img {
     flex-direction: row;
     transform-style: preserve-3d;
     transform: perspective(1000px);
+    width: 60vw; /* Set width to 60% of the viewport width for larger screens */
 }
 
 .heroList .heroItem {
     position: relative;
-    transition: .5s;
+    transition: transform 0.5s, filter 0.5s;
     filter: brightness(0.4);
-    margin: 0 5px; 
+    margin: 0 5px;
 }
 
 .heroList .heroItem:hover {
     filter: brightness(1);
     transform: translateZ(200px);
 }
+
 .heroList .heroItem:hover + * {
     filter: brightness(0.6) blur(1px);
     transform: translateZ(150px) rotateY(40deg);
 }
+
 .heroList .heroItem:hover + * + * {
     filter: brightness(0.4) blur(1px);
     transform: translateZ(70px) rotateY(20deg);
 }
+
 .heroList .heroItem:hover + * + * + * {
     filter: brightness(0.2) blur(1px);
     transform: translateZ(30px) rotateY(10deg);
 }
-.heroList .heroItem:has(+ *:hover){
+
+.heroList .heroItem:has(+ *:hover) {
     filter: brightness(0.6) blur(1px);
     transform: translateZ(150px) rotateY(-40deg);
 }
-.heroList .heroItem:has(+ * + *:hover){
+
+.heroList .heroItem:has(+ * + *:hover) {
     filter: brightness(0.4) blur(1px);
     transform: translateZ(70px) rotateY(-20deg);
 }
-.heroList .heroItem:has(+ * + * + *:hover){
+
+.heroList .heroItem:has(+ * + * + *:hover) {
     filter: brightness(0.2) blur(1px);
     transform: translateZ(30px) rotateY(-10deg);
 }
@@ -72,10 +84,11 @@ img {
     position: absolute;
     top: 0;
     left: 0;
-    right: 0;
+    width: 100%;
+    height: 100%; /* Match the height of the image */
     background-color: #e08a0066;
     backdrop-filter: blur(10px);
-    color: white;
+    color: var(--text);
     padding: 10px;
     opacity: 0;
     transition: opacity 0.5s;
@@ -83,8 +96,86 @@ img {
     pointer-events: none;
     border: 2px solid var(--accent);
     z-index: 10;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .heroList .heroItem:hover .heroInfo {
     opacity: 1;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1200px) {
+    .heroContainer {
+        width: 90vw; /* Set width to 60% of the viewport width for tablets */
+    }
+
+    .heroList {
+        flex-direction: row; /* Keep items in a row */
+        flex-wrap: wrap; /* Allow wrapping */
+    }
+
+    .heroList .heroItem {
+        flex: 1 1 calc(50% - 20px); /* Adjust width to fit 2 items per row with gap */
+        margin: 10px; /* Add vertical and horizontal margin */
+        height: 100px; /* Adjust height for smaller images */
+    }
+
+    .heroList .heroItem:nth-child(1):only-child {
+        flex: 1 1 100%; /* Make single item full width */
+        height: 200px; /* Adjust height for full width image */
+    }
+
+    .heroImg {
+        width: 100%; /* Make images responsive */
+        height: 100%; /* Maintain aspect ratio */
+    }
+}
+
+@media (max-width: 768px) {
+    .heroContainer {
+        width: 90vw; /* Set width to 90% of the viewport width for mobile devices */
+    }
+
+    .heroList {
+        flex-direction: column; /* Stack items vertically on mobile devices */
+    }
+
+    .heroList .heroItem {
+        margin: 10px 0; /* Add vertical margin */
+    }
+
+    .heroList .heroItem .heroInfo {
+        display: none; /* Hide heroInfo on mobile devices */
+    }
+
+    .heroImg {
+        width: 100%; /* Make images responsive */
+        height: auto; /* Maintain aspect ratio */
+    }
+}
+
+@media (max-width: 480px) {
+    .heroContainer {
+        width: 90vw; /* Set width to 90% of the viewport width for smaller mobile devices */
+    }
+
+    .heroList {
+        flex-direction: column; /* Stack items vertically on smaller mobile devices */
+    }
+
+    .heroList .heroItem {
+        margin: 10px 0; /* Add vertical margin */
+    }
+
+    .heroList .heroItem .heroInfo {
+        display: none; /* Hide heroInfo on smaller mobile devices */
+    }
+
+    .heroImg {
+        width: 100%; /* Make images responsive */
+        height: auto; /* Maintain aspect ratio */
+    }
 }
