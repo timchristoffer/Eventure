@@ -46,9 +46,10 @@
     display: flex;
     justify-content: center;
     padding-bottom: 5rem;
-    overflow-x: hidden;
+    overflow: hidden;
     box-sizing: border-box;
     width: 100%;
+    padding-bottom: 25rem;
   }
 
   .aboutUsPageContentContainer {
@@ -56,7 +57,8 @@
     flex-wrap: wrap;
     max-width: var(--max-width);
     width: 100%;
-    overflow-x: hidden;
+    overflow:hidden;
+    margin-bottom: -25rem;
   }
 
   .aboutUsLeftContent {
@@ -84,16 +86,16 @@
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: flex-start;
-    margin-top: 34.375rem;
-    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin-top: -20rem;
+    width: 50%;
     max-width: 100%;
-    position: absolute;
     left: 0;
-    padding-left: 11.5rem;
-    gap: 1.25rem;
+    gap: 0rem;
   }
 
-
+  
   .aboutUsEmployeeContainer>* {
     flex-shrink: 1;
     max-width: 100%;
@@ -129,7 +131,7 @@
   .jobTitle {
     font-weight: bold;
     font-size: 0.8rem;
-    margin-bottom: 15.375rem;
+    margin-bottom: 5rem;
   }
 
   .formContainer {
@@ -227,18 +229,21 @@
       display: flex;
       justify-content: center;
       padding-bottom: 5rem;
-      overflow-x: hidden;
+      overflow: hidden;
       box-sizing: border-box;
+      padding-left: 4.5rem;
     }
 
     .aboutUsEmployeeContainer {
       flex-direction: row;
       justify-content: center;
       align-items: flex-start;
-      width: 40%;
+      width: 50%;
       margin: 0;
       position: relative;
       margin-top: -3rem;
+      margin-bottom: 10rem;
+      
     }
 
     .employee {
@@ -274,6 +279,14 @@
       z-index: 10;
       margin-bottom: 0rem;
     }
+    .aboutUsPageContentContainer {
+      display: flex;
+      flex-wrap: wrap;
+      max-width: var(--max-width);
+      width: 100%;
+      overflow-x: hidden;
+      margin-bottom: -10rem;
+    }
   }
 
 
@@ -282,7 +295,7 @@
       display: flex;
       justify-content: center;
       padding-bottom: 5rem;
-      overflow-x: hidden;
+      overflow: hidden;
       box-sizing: border-box;
     }
 
@@ -294,7 +307,7 @@
       margin: 0;
       position: relative;
       margin-top: -5rem;
-      overflow-x: hidden;
+      overflow: hidden;
 
     }
 
@@ -325,7 +338,7 @@
       display: flex;
       justify-content: center;
       padding-bottom: 5rem;
-      overflow-x: hidden;
+      overflow: hidden;
       box-sizing: border-box;
     }
 
@@ -365,7 +378,7 @@
       display: flex;
       justify-content: center;
       padding-bottom: 5rem;
-      overflow-x: hidden;
+      overflow: hidden;
       box-sizing: border-box;
     }
 
@@ -407,7 +420,7 @@
       display: flex;
       justify-content: center;
       padding-bottom: 5rem;
-      overflow-x: hidden;
+      overflow: hidden;
       box-sizing: border-box;
     }
 
@@ -449,9 +462,8 @@
       display: flex;
       justify-content: center;
       padding-bottom: 5rem;
-      overflow-x: hidden;
+      overflow: hidden;
       box-sizing: border-box;
-      padding-left: 6rem;
     }
 
     .aboutUsEmployeeContainer {
@@ -499,9 +511,8 @@
       display: flex;
       justify-content: center;
       padding-bottom: 5rem;
-      overflow-x: hidden;
+      overflow: hidden;
       box-sizing: border-box;
-      padding-left: 3.5rem;
     }
 
     .aboutUsEmployeeContainer {
@@ -540,7 +551,7 @@
       display: flex;
       justify-content: center;
       padding-bottom: 5rem;
-      overflow-x: hidden;
+      overflow: hidden;
       box-sizing: border-box;
     }
 
@@ -580,9 +591,8 @@
       display: flex;
       justify-content: center;
       padding-bottom: 5rem;
-      overflow-x: hidden;
+      overflow: hidden;
       box-sizing: border-box;
-      padding-left: 15.5rem;
     }
 
     .aboutUsEmployeeContainer {
@@ -614,26 +624,27 @@
     }
 
   }
-
+  
 
   @media (max-width: 30rem) {
     .aboutUsPage {
       display: flex;
-      justify-content: center;
+      justify-content: flex-start;
       padding-bottom: 5rem;
-      overflow-x: hidden;
+      overflow: hidden;
       box-sizing: border-box;
-      padding-left: 16rem;
+      padding-right: 3.125rem;
+      padding-left: 3.125rem;
     }
-
     .aboutUsEmployeeContainer {
       flex-direction: row;
-      justify-content: center;
+      justify-content:flex-start;
       align-items: flex-start;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
       width: 100%;
       margin: 0;
     }
-
     .employee {
       text-align: center;
       margin: 0 1rem;
@@ -661,18 +672,24 @@
       display: flex;
       justify-content: center;
       padding-bottom: 5rem;
-      overflow-x: hidden;
+      overflow: hidden;
       box-sizing: border-box;
-      padding-left: 19rem;
+      padding-right: 2.5rem;
+      padding-left: 2.5rem;
     }
 
     .aboutUsEmployeeContainer {
       flex-direction: row;
-      justify-content: center;
+      justify-content:center;
       align-items: flex-start;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
       width: 100%;
       margin: 0;
+      padding-left: -9.375rem;
     }
+
+    
 
     .employee {
       text-align: center;
