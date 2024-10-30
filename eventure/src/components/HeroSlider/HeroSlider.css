@@ -10,7 +10,7 @@
 
 .heroImg {
     width: 100%;
-    height: 150px;
+    height: 100%;
     object-fit: cover;
     border-radius: 5px;
     transition: transform 0.5s, filter 0.5s;
@@ -35,14 +35,17 @@
     flex-direction: row;
     transform-style: preserve-3d;
     transform: perspective(1000px);
-    width: 60vw; /* Set width to 60% of the viewport width for larger screens */
+    gap: 10px;
+    width: 60vw; 
 }
 
 .heroList .heroItem {
     position: relative;
     transition: transform 0.5s, filter 0.5s;
     filter: brightness(0.4);
+    flex: 1 1 calc(16.66% - 10px);
     margin: 0 5px;
+    width: 150px;
 }
 
 .heroList .heroItem:hover {
@@ -106,10 +109,9 @@
     opacity: 1;
 }
 
-/* Media Queries for Responsiveness */
 @media (max-width: 1200px) {
     .heroContainer {
-        width: 90vw; /* Set width to 60% of the viewport width for tablets */
+        width: 90vw; /* Set width to 90% of the viewport width for tablets */
     }
 
     .heroList {

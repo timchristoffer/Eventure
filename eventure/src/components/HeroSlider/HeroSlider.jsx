@@ -38,9 +38,14 @@ const HeroSlider = () => {
       setTimeout(() => {
         setCurrentIndex(prevIndex => {
           const newIndex = (prevIndex + 1) % events.length;
+          const newEvent = events[newIndex];
           const newVisibleEvents = [...visibleEvents];
-          newVisibleEvents.shift();
-          newVisibleEvents.push(events[newIndex]);
+
+          if (!newVisibleEvents.some(event => event.id === newEvent.id)) {
+            newVisibleEvents.shift();
+            newVisibleEvents.push({ ...newEvent, uniqueId: Date.now() });
+          }
+
           setVisibleEvents(newVisibleEvents);
           setFade(false);
           return newIndex;
@@ -65,10 +70,10 @@ const HeroSlider = () => {
             : '';
           console.log('Image URL:', imageUrl);
           return (
-            <div className='heroItem' key={event.id}>
+            <div className={`heroItem ${fade ? 'fade-out' : 'fade-in'}`} key={event.uniqueId}>
               <Link 
                 to={`/event/${event.documentId}`}
-                key={event.id}
+                key={event.uniqueId}
                 alt={`link to event: ${event.eventTitle}`}
               >
               {imageUrl && <img src={imageUrl} className='heroImg' alt={event.eventTitle} onError={(e) => console.error('Image load error:', e)} />}
