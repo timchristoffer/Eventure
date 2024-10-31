@@ -18,17 +18,18 @@ const EventCard = ({ event }) => {
 
 
     return (
-        <div className="EventCard">
-            {eventImg && <img
-            src={eventImg}
-            onError={(e) => console.error('Image load error: ', e)}
-            />}
-            <h2>{event.eventTitle}</h2>
-            <p>{readableEventTime}</p>
-            <p>{event.eventVenue}</p>
-            <p>{event.eventPrice}kr</p>
-            <p>{event.eventTime}</p>
-            <p>{event.host.hostName}</p>
+        <div className="EventCardFrame">
+            <div className="EventCard">
+                {eventImg && <img
+                src={eventImg}
+                onError={(e) => console.error('Image load error: ', e)}
+                />}
+                <h2>{event.eventTitle}</h2>
+                <p>{readableEventTime}</p>
+                <p>{event.eventVenue}</p>
+                <p>{event.eventPrice}kr</p>
+                <p>{event.host?.hostName || 'Unknown host'}</p>
+            </div>
         </div>
     )
 }

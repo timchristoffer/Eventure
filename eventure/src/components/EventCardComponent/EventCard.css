@@ -1,4 +1,52 @@
 .EventCard img {
-    max-width: 100px;
+    max-width: 80px;
     height: auto;
+    margin-bottom: 10px;
+    border-radius: 8px;
+}
+
+.EventCardFrame {
+    width: 220px;
+    height: 300px;
+    /* background-image: linear-gradient(163deg, #00ff75 0%, #3700ff 100%); */
+    background-color: var(--primary);
+    border-radius: 20px;
+    transition: all .3s;
+  }
+  
+  .EventCard {
+    width: 100%;
+    height: 100%;
+    background-color: var(--secondary);
+    border-radius: 10px;
+    transition: all .2s;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    box-sizing: border-box;
+    color: #ffffff;
+  }
+  
+  .EventCard:hover {
+    transform: scale(0.98);
+    border-radius: 20px;
+  }
+  
+  .EventCardFrame:hover {
+    box-shadow: 0px 0px 30px 1px var(--primary);
+  }
+
+  .EventCard h2 {
+    font-size: 1em;
+    margin: 5px 0;
+    text-align: center;
+}
+
+.EventCard p {
+    font-size: 0.9em;
+    margin: 2px 0;
+    text-align: center;
 }
