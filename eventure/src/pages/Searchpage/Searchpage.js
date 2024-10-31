@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Searchbar from '../../components/SearchpageComponent/Searchbar';
 import axios from "axios";
 import EventCard from '../../components/EventCardComponent/EventCard';
+import { Link } from 'react-router-dom';
 
 const Searchpage = () => {
   const [allEvents, setAllEvents] = useState([]);
@@ -57,7 +58,13 @@ const Searchpage = () => {
       <Searchbar onSearch={handleSearch} hosts={allHosts} genres={genres}/>
       <div>
         {filteredEvents.map((event) => (
-          <EventCard key={event.id} event={event} />
+        <Link 
+          to={`/event/${event.documentId}`}
+          key={event.id}
+          alt={`link to event: ${event.eventTitle}`}
+        >
+          <EventCard event={event} />
+        </Link>
         ))}
       </div>
     </div>

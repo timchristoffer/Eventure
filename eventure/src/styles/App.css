@@ -19,27 +19,38 @@ body {
   line-height: 1.6;
   margin: 0;
   padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
-h1{
+h1 {
   font-family: 'Zilla Slab', Arial, sans-serif;
 }
 
 h2, h3, h4, h5, h6 {
   font-family: 'Bebas Neue', sans-serif;
+  color: var(--text);
 }
 
-/* Använd Roboto för paragrafer */
 p {
   font-family: 'Roboto', sans-serif;
+  color: var(--text);
 }
 
-.App{
-  margin-top: 100px; /* Justera detta värde baserat på höjden på din navbar */
+.App {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.content-wrapper {
+  flex-grow: 1;
+  margin-top: 100px;
   padding: 20px;
+  margin-bottom: 60px; /* Ensure there is space for the footer */
 }
 
-/* Temadefinitioner */
 :root[data-theme="light"] {
   --text: #171717;
   --secondary-text: #e8e8e8;
@@ -48,8 +59,8 @@ p {
   --secondary: #b8b8b8;
   --accent: #4d4d4d;
   --logo-filter: invert(0);
-  --background-image: url('../assets/images/background-light.svg'); /* Lägg till bakgrundsbild för light mode */
-  --header-image: url('../assets/header/header-light.svg'); /* Lägg till headerbild för light mode */
+  --background-image: url('../assets/images/background-light.svg');
+  --header-image: url('../assets/header/header-light.svg');
 }
 
 :root[data-theme="dark"] {
@@ -60,11 +71,10 @@ p {
   --secondary: #474747;
   --accent: #b3b3b3;
   --logo-filter: invert(1);
-  --background-image: url('../assets/images/background-dark.svg'); /* Lägg till bakgrundsbild för dark mode */
-  --header-image: url('../assets/header/header-dark.svg'); /* Lägg till headerbild för dark mode */
+  --background-image: url('../assets/images/background-dark.svg');
+  --header-image: url('../assets/header/header-dark.svg');
 }
 
-/* Grundläggande stilar */
 a {
   color: var(--primary);
   text-decoration: none;
@@ -81,69 +91,16 @@ button {
   font-size: 1em;
 }
 
-.header, .footer {
+.header {
   background-color: var(--secondary);
   color: var(--text);
   padding: 20px;
   text-align: center;
 }
 
-/* Responsiv layout */
 .container {
   width: 90%;
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
-}
-
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 20px;
-  background-color: var(--secondary);
-}
-
-.navbar a {
-  color: var(--text);
-  margin: 0 10px;
-}
-
-.navbar-toggle {
-  display: none;
-}
-
-@media (max-width: 768px) {
-  .navbar {
-    flex-direction: column;
-  }
-
-  .navbar-links {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-    position: absolute;
-    top: 60px;
-    left: 0;
-    background-color: var(--secondary);
-    padding: 10px 0;
-  }
-
-  .navbar-links.open {
-    display: flex;
-  }
-
-  .navbar-toggle {
-    display: flex;
-    flex-direction: column;
-    cursor: pointer;
-  }
-
-  .navbar-toggle .bar {
-    width: 25px;
-    height: 3px;
-    background-color: var(--text);
-    margin: 4px 0;
-    transition: 0.4s;
-  }
 }
