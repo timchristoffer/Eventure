@@ -143,12 +143,13 @@
     flex-direction: column;
     width: 100%;
     max-width: 37.5rem;
+    min-height: 43rem; 
     justify-content: baseline;
     z-index: 10;
     margin-bottom: 10rem;
     background-color: var(--secondary);
   }
-
+  
   form {
     display: flex;
     flex-direction: column;
