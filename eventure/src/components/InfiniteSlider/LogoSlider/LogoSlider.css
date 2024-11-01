@@ -1,5 +1,5 @@
 .logoSlider {
-    width: 60vw; /* Set width to 60% of the viewport width for larger screens */
+    width: 60vw; 
     margin: 0 auto;
     height: var(--height);
     overflow: hidden;
@@ -50,24 +50,24 @@
 /* Media Queries for Responsiveness */
 @media (max-width: 1200px) {
     .logoSlider {
-        width: 80vw; /* Adjust width for tablets */
-        --width: 150px; /* Adjust width for tablets */
-        --height: 100px; /* Adjust height for tablets */
+        width: 80vw; 
+        --width: 150px; 
+        --height: 100px; 
     }
 }
 
 @media (max-width: 768px) {
     .logoSlider {
-        width: 90vw; /* Adjust width for mobile devices */
-        --width: 120px; /* Adjust width for mobile devices */
-        --height: 80px; /* Adjust height for mobile devices */
+        width: 90vw; 
+        --width: 120px; 
+        --height: 80px; 
     }
 }
 
 @media (max-width: 480px) {
     .logoSlider {
-        width: 90vw; /* Adjust width for smaller mobile devices */
-        --width: 100px; /* Adjust width for smaller mobile devices */
-        --height: 60px; /* Adjust height for smaller mobile devices */
+        width: 90vw; 
+        --width: 100px; 
+        --height: 60px;
     }
 }
