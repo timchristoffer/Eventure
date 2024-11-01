@@ -12,12 +12,20 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "title": {
+    "aboutUsHeader": {
       "type": "string"
     },
-    "blocks": {
-      "type": "dynamiczone",
-      "components": ["shared.media", "shared.quote", "shared.rich-text", "shared.slider"]
+    "eventureAboutUsDescription": {
+      "type": "blocks"
+    },
+    "aboutUsHeadline1": {
+      "type": "string"
+    },
+    "eventureAboutUsDescription2": {
+      "type": "blocks"
+    },
+    "aboutUsHeadline2": {
+      "type": "string"
     }
   }
 }
