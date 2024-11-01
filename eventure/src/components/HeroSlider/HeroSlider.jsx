@@ -13,17 +13,11 @@ const HeroSlider = () => {
     const fetchEvents = async () => {
       try {
         const response = await axios.get('http://localhost:1337/api/events?populate=*');
-        console.log('API response:', response.data);
         const allEvents = response.data.data;
-        console.log('All Events:', allEvents);
-        allEvents.forEach(event => {
-          console.log('Event:', event);
-          console.log('Event Attributes:', event);
-        });
         const featuredEvents = allEvents.filter(event => event.eventFeatured);
         
         setEvents(featuredEvents);
-        setVisibleEvents(featuredEvents.slice(0, 6)); // Show first 6 events initially
+        setVisibleEvents(featuredEvents.slice(0, 6)); 
       } catch (error) {
         console.error('Error fetching events:', error);
       }
@@ -38,15 +32,20 @@ const HeroSlider = () => {
       setTimeout(() => {
         setCurrentIndex(prevIndex => {
           const newIndex = (prevIndex + 1) % events.length;
+          const newEvent = events[newIndex];
           const newVisibleEvents = [...visibleEvents];
-          newVisibleEvents.shift();
-          newVisibleEvents.push(events[newIndex]);
+
+          if (!newVisibleEvents.some(event => event.id === newEvent.id)) {
+            newVisibleEvents.shift();
+            newVisibleEvents.push(newEvent);
+          }
+
           setVisibleEvents(newVisibleEvents);
           setFade(false);
           return newIndex;
         });
-      }, 500); // Duration of fade out transition
-    }, 5000); // Change one event every 5 seconds
+      }, 500); 
+    }, 5000); 
 
     return () => clearInterval(interval);
   }, [events, visibleEvents]);
@@ -59,16 +58,13 @@ const HeroSlider = () => {
       </div>
       <div className={`heroList ${fade ? 'fade-out' : 'fade-in'}`}>
         {visibleEvents.map(event => {
-          console.log('Event:', event);
           const imageUrl = event.eventPicture?.url 
             ? `http://localhost:1337${event.eventPicture.url}` 
             : '';
-          console.log('Image URL:', imageUrl);
           return (
-            <div className='heroItem' key={event.id}>
+            <div className={`heroItem ${fade ? 'fade-out' : 'fade-in'}`} key={event.id}>
               <Link 
                 to={`/event/${event.documentId}`}
-                key={event.id}
                 alt={`link to event: ${event.eventTitle}`}
               >
               {imageUrl && <img src={imageUrl} className='heroImg' alt={event.eventTitle} onError={(e) => console.error('Image load error:', e)} />}
@@ -93,6 +89,6 @@ const HeroSlider = () => {
       </div>
     </div>
   );
-}
+};
 
 export default HeroSlider;

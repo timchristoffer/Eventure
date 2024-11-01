@@ -1,13 +1,50 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import './Footer.css';
 
 const Footer = () => {
+  const [footerData, setFooterData] = useState({
+    footerEmail: '',
+    footerPhone: '',
+    footerAdress: '',
+    footerCopyright: ''
+  });
+
+  useEffect(() => {
+    const fetchFooterData = async () => {
+      try {
+        const response = await axios.get('http://localhost:1337/api/footer?populate=*');
+        console.log('API response:', response.data);
+
+        console.log('Full Response:', response);
+
+        if (response.data && response.data.data) {
+          const footer = response.data.data;
+          console.log('Footer:', footer);
+
+          setFooterData({
+            footerEmail: footer.footerEmail || '',
+            footerPhone: footer.footerPhone || '',
+            footerAdress: footer.footerAdress || '',
+            footerCopyright: footer.footerCopyright || ''
+          });
+        } else {
+          console.error('Footer data is not in the expected format:', response.data);
+        }
+      } catch (error) {
+        console.error('Error fetching footer data:', error);
+      }
+    };
+
+    fetchFooterData();
+  }, []);
+
   return (
     <div className="footer">
       <div className="footer-contact">
-        <p>Email: info@eventure.com</p>
-        <p>Phone: +46 696 9690</p>
-        <p>Address: 69th Git St, Tokyo, Japan</p>
+        <p>Email: {footerData.footerEmail}</p>
+        <p>Phone: {footerData.footerPhone}</p>
+        <p>Address: {footerData.footerAdress}</p>
       </div>
       <div className="footer-social">
         <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
@@ -27,7 +64,7 @@ const Footer = () => {
         </a>
       </div>
       <div className="footer-copyright">
-        <p>&copy; 2023 Eventure. All rights reserved.</p>
+        <p>&copy; {footerData.footerCopyright}</p>
       </div>
     </div>
   );
