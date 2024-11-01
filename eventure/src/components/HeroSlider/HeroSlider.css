@@ -10,7 +10,7 @@
 
 .heroImg {
     width: 100%;
-    height: 150px;
+    height: 100%;
     object-fit: cover;
     border-radius: 5px;
     transition: transform 0.5s, filter 0.5s;
@@ -35,14 +35,17 @@
     flex-direction: row;
     transform-style: preserve-3d;
     transform: perspective(1000px);
-    width: 60vw; /* Set width to 60% of the viewport width for larger screens */
+    gap: 10px;
+    width: 60vw; 
 }
 
 .heroList .heroItem {
     position: relative;
     transition: transform 0.5s, filter 0.5s;
     filter: brightness(0.4);
+    flex: 1 1 calc(16.66% - 10px);
     margin: 0 5px;
+    width: 150px;
 }
 
 .heroList .heroItem:hover {
@@ -85,7 +88,7 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%; /* Match the height of the image */
+    height: 100%; 
     background-color: #e08a0066;
     backdrop-filter: blur(10px);
     color: var(--text);
@@ -109,73 +112,75 @@
 /* Media Queries for Responsiveness */
 @media (max-width: 1200px) {
     .heroContainer {
-        width: 90vw; /* Set width to 60% of the viewport width for tablets */
+        width: 90vw; 
     }
 
     .heroList {
-        flex-direction: row; /* Keep items in a row */
-        flex-wrap: wrap; /* Allow wrapping */
+        flex-direction: row; 
+        flex-wrap: wrap; 
     }
 
     .heroList .heroItem {
-        flex: 1 1 calc(50% - 20px); /* Adjust width to fit 2 items per row with gap */
-        margin: 10px; /* Add vertical and horizontal margin */
-        height: 100px; /* Adjust height for smaller images */
+        flex: 1 1 calc(50% - 20px); 
+        margin: 10px; 
+        height: 100px; 
     }
 
     .heroList .heroItem:nth-child(1):only-child {
-        flex: 1 1 100%; /* Make single item full width */
-        height: 200px; /* Adjust height for full width image */
+        flex: 1 1 100%; 
+        height: 200px; 
     }
 
     .heroImg {
-        width: 100%; /* Make images responsive */
-        height: 100%; /* Maintain aspect ratio */
+        width: 100%; 
+        height: 100%; 
     }
 }
 
 @media (max-width: 768px) {
     .heroContainer {
-        width: 90vw; /* Set width to 90% of the viewport width for mobile devices */
+        width: 90vw; 
     }
 
     .heroList {
-        flex-direction: column; /* Stack items vertically on mobile devices */
+        flex-direction: column; 
     }
 
     .heroList .heroItem {
-        margin: 10px 0; /* Add vertical margin */
+        margin: 10px 0; 
+        width: 100%; 
     }
 
     .heroList .heroItem .heroInfo {
-        display: none; /* Hide heroInfo on mobile devices */
+        display: none; 
     }
 
     .heroImg {
-        width: 100%; /* Make images responsive */
-        height: auto; /* Maintain aspect ratio */
+        width: 100%; 
+        height: auto; 
     }
 }
 
 @media (max-width: 480px) {
     .heroContainer {
-        width: 90vw; /* Set width to 90% of the viewport width for smaller mobile devices */
+        width: 90vw; 
     }
 
     .heroList {
-        flex-direction: column; /* Stack items vertically on smaller mobile devices */
+        flex-direction: column; 
     }
 
     .heroList .heroItem {
-        margin: 10px 0; /* Add vertical margin */
+        margin: 10px 0; 
+        width: 100%; 
     }
 
     .heroList .heroItem .heroInfo {
-        display: none; /* Hide heroInfo on smaller mobile devices */
+        display: none; 
     }
 
     .heroImg {
-        width: 100%; /* Make images responsive */
-        height: auto; /* Maintain aspect ratio */
+        width: 100%; 
+        height: auto; 
     }
 }
