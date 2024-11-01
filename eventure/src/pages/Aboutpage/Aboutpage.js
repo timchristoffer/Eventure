@@ -1,5 +1,5 @@
 import React from 'react';
-import 'c:/Users/olive/OneDrive/Skrivbord/EventureMapp/Eventure/eventure/src/components/AboutpageComponents/Aboutpage.css';
+import '../../components/AboutpageComponents/Aboutpage.css';
 import AboutUsHeader from '../../components/AboutpageComponents/AboutUsHeader';
 import ContactUs from '../../components/AboutpageComponents/ContactForm';
 import EmployeeList from '../../components/AboutpageComponents/EmployeeList';
