@@ -12,7 +12,9 @@
     grid-column-gap: 0px;
     grid-row-gap: 0px;
     padding: 10px;
-    margin-bottom: 200px;
+}
+.event-container a{
+    color: var(--text);
 }
 
 @media screen and (max-width: 620px) {
@@ -22,8 +24,8 @@
         width: 80vw;
         margin: 0;
     }
-    .event-img{
-        max-width: 80vw;
+    .event-container img{
+        max-width: 100%;
     }
     .event-presentation{
         display: flex;
@@ -36,7 +38,7 @@
     float: left;
     margin-right: 10px;
     margin-bottom: 10px;
-    max-height: 200px;
+    max-width: 40%;
     border-radius: 8px;
 }
 .event-presentation{
