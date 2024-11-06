@@ -17,7 +17,6 @@ const AboutUsHeader = () => {
         const data = response.data.data;
 
         if (data) {
-
           setAboutData({
             aboutUsHeader: data.aboutUsHeader,
             aboutUsHeadline1: data.aboutUsHeadline1,
@@ -42,8 +41,12 @@ const AboutUsHeader = () => {
         return item.children.map((child) => child.text).join('');
       }
       return '';
-    }).join(' '); 
+    }).join(' ');
   };
+
+  const isDescriptionEmpty =
+    aboutData.eventureAboutUsDescription.length === 0 &&
+    aboutData.eventureAboutUsDescription2.length === 0;
 
   return (
     <div className="aboutUsLeftContent column">
@@ -52,18 +55,16 @@ const AboutUsHeader = () => {
       <p>
         {aboutData.eventureAboutUsDescription.length > 0 ? (
           extractText(aboutData.eventureAboutUsDescription)
-        ) : (
-          <span>No description available</span>
-        )}
+        ) : null}
       </p>
       <h2>{aboutData.aboutUsHeadline2}</h2>
       <p>
         {aboutData.eventureAboutUsDescription2.length > 0 ? (
           extractText(aboutData.eventureAboutUsDescription2)
-        ) : (
-          <span>No description available</span>
-        )}
+        ) : null}
       </p>
+
+      {isDescriptionEmpty && <span>No description available</span>}
     </div>
   );
 };

@@ -8,7 +8,7 @@ const Aboutpage = () => (
   <div className="aboutUsPage">
     <div className="aboutUsPageContentContainer">
       <AboutUsHeader />
-      <div className="formContainer">
+      <div className="formContainer" alt="Contact us at Eventure form">
         <ContactUs />
       </div>
       <EmployeeList />
