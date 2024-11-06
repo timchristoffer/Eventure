@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import './Searchbar.css';
 
 const Searchbar = ({ onSearch, hosts, genres }) => {
   const [searchText, setSearchText] = useState('');
@@ -22,60 +23,72 @@ const Searchbar = ({ onSearch, hosts, genres }) => {
   };
 
   return (
-    <div>
+    <div className="SearchbarDiv">
       <input
+        className="textInput"
         type="text"
         value={searchText}
         onChange={(e) => setSearchText(e.target.value)}
-        placeholder="Search..."
+        placeholder="Sök..."
       />
+      
       <input
+        className="minPriceInput"
         type="number"
         value={minPrice}
         onChange={(e) => setMinPrice(e.target.value)}
-        placeholder="Min price"
+        placeholder="Min pris"
       />
       <input
+        className="maxPriceInput"
         type="number"
         value={maxPrice}
         onChange={(e) => setMaxPrice(e.target.value)}
-        placeholder="Max price"
+        placeholder="Max pris"
       />
+      
       <input
+        className="startDateInput"
         type="date"
         value={startDate}
         onChange={(e) => setStartDate(e.target.value)}
-        placeholder="Start date"
+        placeholder="Startdatum"
       />
       <input
+        className="endDateInput"
         type="date"
         value={endDate}
         onChange={(e) => setEndDate(e.target.value)}
-        placeholder="End date"
+        placeholder="Slutdatum"
       />
+
       <select
+        className="hostInput"
         value={selectedHost}
         onChange={(e) => setSelectedHost(e.target.value)}
       >
-        <option value="">All Hosts</option>
+        <option value="">Alla Värdar</option>
         {hosts.map((host) => (
           <option key={host} value={host}>
             {host}
           </option>
         ))}
       </select>
+      
       <select
+        className="genreInput"
         value={selectedGenre}
         onChange={(e) => setSelectedGenre(e.target.value)}
       >
-        <option value="">All Genres</option>
+        <option value="">Alla Genrer</option>
         {genres.map((genre) => (
           <option key={genre} value={genre}>
             {genre}
           </option>
         ))}
       </select>
-      <button onClick={handleSearchClick}>Search</button>
+
+      <button className="searchButton" onClick={handleSearchClick}>Sök</button>
     </div>
   );
 };

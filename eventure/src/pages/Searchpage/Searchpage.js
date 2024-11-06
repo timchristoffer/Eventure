@@ -3,6 +3,7 @@ import Searchbar from '../../components/SearchpageComponent/Searchbar';
 import axios from "axios";
 import EventCard from '../../components/EventCardComponent/EventCard';
 import { Link } from 'react-router-dom';
+import './Searchpage.css'
 
 const Searchpage = () => {
   const [allEvents, setAllEvents] = useState([]);
@@ -53,10 +54,10 @@ const Searchpage = () => {
   }, [allEvents]);
 
   return (
-    <div>
-      <h1>Searchpage</h1>
-      <Searchbar onSearch={handleSearch} hosts={allHosts} genres={genres}/>
-      <div>
+    <div className='Searchpage'>
+      <h1 className='SearchpageTitle'>Searchpage</h1>
+      <Searchbar className="Searchbar" onSearch={handleSearch} hosts={allHosts} genres={genres}/>
+      <div className='EventCardsContainer'>
         {filteredEvents.map((event) => (
         <Link 
           to={`/event/${event.documentId}`}
