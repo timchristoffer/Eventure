@@ -1,0 +1,729 @@
+  :root[data-theme="light"] {
+    --text: #171717;
+    --secondary-text: #e8e8e8;
+    --background: #e0dacd;
+    --primary: #ffa91f;
+    --primary-hover: #e08a00;
+    --secondary: #b8b8b8;
+    --accent: #4d4d4d;
+    --padding: 2rem;
+    --gap: 1rem;
+    --max-width: 75rem;
+  }
+
+  :root[data-theme="dark"] {
+    --text: #e8e8e8;
+    --secondary-text: #171717;
+    --background: #121212;
+    --primary: #e08a00;
+    --primary-hover: #ffa91f;
+    --secondary: #474747;
+    --accent: #b3b3b3;
+    --padding: 2rem;
+    --gap: 1rem;
+    --max-width: 75rem;
+  }
+
+  :root[data-theme="light"] input:-webkit-autofill,
+  :root[data-theme="light"] input:-webkit-autofill:hover,
+  :root[data-theme="light"] input:-webkit-autofill:focus,
+  :root[data-theme="light"] input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px var(--background) inset !important;
+    -webkit-text-fill-color: var(--text) !important;
+    transition: background-color 5000s ease-in-out 0s;
+  }
+
+  :root[data-theme="dark"] input:-webkit-autofill,
+  :root[data-theme="dark"] input:-webkit-autofill:hover,
+  :root[data-theme="dark"] input:-webkit-autofill:focus,
+  :root[data-theme="dark"] input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px var(--background) inset !important;
+    -webkit-text-fill-color: var(--text) !important;
+    transition: background-color 5000s ease-in-out 0s;
+  }
+
+  .aboutUsPage {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 5rem;
+    overflow: hidden;
+    box-sizing: border-box;
+    width: 100%;
+    padding-bottom: 25rem;
+  }
+
+  .aboutUsPageContentContainer {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: var(--max-width);
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: -25rem;
+  }
+
+  .aboutUsLeftContent {
+    flex: 1;
+    padding: calc(var(--padding) / 2);
+  }
+
+  .aboutUsRightContent {
+    flex: 1;
+    padding: calc(var(--padding) / 2);
+  }
+
+  .aboutUsHeader {
+    text-align: center;
+    font-size: 2.5rem;
+  }
+
+
+  * {
+    box-sizing: border-box;
+  }
+
+  .aboutUsEmployeeContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin-top: -20rem;
+    width: 50%;
+    max-width: 100%;
+    left: 0;
+    gap: 0rem;
+  }
+
+
+  .aboutUsEmployeeContainer>* {
+    flex-shrink: 1;
+    max-width: 100%;
+  }
+
+  .employee {
+    text-align: center;
+    margin: 0 1rem;
+    flex: 0 0 10%;
+    min-width: 5rem;
+    margin-left: -0.3125rem;
+    margin-right: -0.3125rem;
+  }
+
+  .employee img {
+    width: 7.5rem;
+    height: auto;
+    max-width: 9.375rem;
+    max-height: 9.375rem;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 0.2rem solid var(--primary);
+    margin-top: -3.75rem;
+    padding: 0.25rem;
+  }
+
+  .employee p {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    color: var(--text);
+  }
+
+  .jobTitle {
+    font-weight: bold;
+    font-size: 0.8rem;
+    margin-bottom: 5rem;
+  }
+
+  .formContainer {
+    border: 0.2rem solid var(--primary);
+    border-radius: 2rem;
+    padding: 1rem;
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 37.5rem;
+    min-height: 43rem; 
+    justify-content: baseline;
+    z-index: 10;
+    margin-bottom: 10rem;
+    background-color: var(--secondary);
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap);
+  }
+
+  form div {
+    display: flex;
+    flex-direction: column;
+  }
+
+  form label {
+    font-weight: bold;
+  }
+
+  form input {
+    background-color: var(--background);
+    color: var(--text);
+    border: 0.2rem solid var(--primary);
+    border-radius: 0.25rem;
+    padding: 0.5rem;
+    font-size: 1rem;
+  }
+
+  form select {
+    background-color: var(--background);
+    color: var(--text);
+    border: 0.2rem solid var(--primary);
+    border-radius: 0.25rem;
+    padding: 0.5rem;
+    font-size: 1rem;
+    margin-bottom: -0.2rem;
+  }
+
+  form textarea {
+    background-color: var(--background);
+    color: var(--text);
+    border: 0.2rem solid var(--primary);
+    border-radius: 0.25rem;
+    padding: 0.5rem;
+    font-size: 1rem;
+  }
+
+  form textarea:focus {
+    border: 0.25rem solid var(--primary-hover);
+    outline: none;
+  }
+
+  form input:focus,
+  form select:focus {
+    border: 0.25rem solid var(--primary-hover);
+    outline: none;
+    margin: -0.05rem;
+  }
+
+  form button {
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 0.0625rem solid var(--primary);
+    border-radius: 0.25rem;
+    font-weight: bold;
+  }
+
+  form button {
+    background-color: var(--primary);
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem 0.625rem;
+    align-self: flex-start;
+
+  }
+
+  form button:hover {
+    background-color: var(--primary-hover);
+  }
+
+  .contactUsSubmitPopupBox {
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 1.25rem;
+    background-color: #4CAF50;
+    color: #fff;
+    border-radius: 0.3125rem;
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.2);
+  }
+
+  @media (max-width: 82rem) {
+    .aboutUsPage {
+      display: flex;
+      justify-content: center;
+      padding-bottom: 5rem;
+      overflow: hidden;
+      box-sizing: border-box;
+      padding-left: 4.5rem;
+    }
+
+    .aboutUsEmployeeContainer {
+      flex-direction: row;
+      justify-content: center;
+      align-items: flex-start;
+      width: 50%;
+      margin: 0;
+      position: relative;
+      margin-top: -3rem;
+      margin-bottom: 10rem;
+
+    }
+
+    .employee {
+      text-align: center;
+      margin: 0 1rem;
+      flex: 0 0 10%;
+      min-width: 5rem;
+      margin-left: 1.3rem;
+    }
+
+    .employee img {
+      width: 6.5rem;
+      height: auto;
+      max-width: 9.375rem;
+      max-height: 9.375rem;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 0.2rem solid var(--primary);
+      margin-top: -3.75rem;
+      padding: 0.25rem;
+    }
+
+    .formContainer {
+      border: 0.5rem solid var(--primary);
+      border-radius: 2rem;
+      padding: 1rem;
+      margin-top: 2rem;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      max-width: 37.5rem;
+      justify-content: baseline;
+      z-index: 10;
+      margin-bottom: 0rem;
+    }
+
+    .aboutUsPageContentContainer {
+      display: flex;
+      flex-wrap: wrap;
+      max-width: var(--max-width);
+      width: 100%;
+      overflow-x: hidden;
+      margin-bottom: -10rem;
+    }
+  }
+
+
+  @media (max-width: 70rem) {
+    .aboutUsPage {
+      display: flex;
+      justify-content: center;
+      padding-bottom: 5rem;
+      overflow: hidden;
+      box-sizing: border-box;
+    }
+
+    .aboutUsEmployeeContainer {
+      flex-direction: row;
+      justify-content: center;
+      align-items: flex-start;
+      width: 40%;
+      margin: 0;
+      position: relative;
+      margin-top: -5rem;
+      overflow: hidden;
+
+    }
+
+    .employee {
+      text-align: center;
+      margin: 0 1rem;
+      flex: 0 0 10%;
+      min-width: 5rem;
+      margin-left: 0.5rem;
+    }
+
+    .employee img {
+      width: 5.5rem;
+      height: auto;
+      max-width: 9.375rem;
+      max-height: 9.375rem;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 0.2rem solid var(--primary);
+      margin-top: 1rem;
+      padding: 0.25rem;
+    }
+  }
+
+
+  @media (max-width: 66rem) {
+    .aboutUsPage {
+      display: flex;
+      justify-content: center;
+      padding-bottom: 5rem;
+      overflow: hidden;
+      box-sizing: border-box;
+    }
+
+    .aboutUsEmployeeContainer {
+      flex-direction: row;
+      justify-content: center;
+      align-items: flex-start;
+      width: 40%;
+      margin: 0;
+      position: relative;
+      margin-top: -5rem;
+    }
+
+    .employee {
+      text-align: center;
+      margin: 0 1rem;
+      flex: 0 0 10%;
+      min-width: 5rem;
+      margin-left: 0rem;
+    }
+
+    .employee img {
+      width: 5rem;
+      height: auto;
+      max-width: 9.375rem;
+      max-height: 9.375rem;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 0.2rem solid var(--primary);
+      margin-top: 1rem;
+      padding: 0.25rem;
+    }
+  }
+
+  @media (max-width: 64rem) {
+    .aboutUsPage {
+      display: flex;
+      justify-content: center;
+      padding-bottom: 5rem;
+      overflow: hidden;
+      box-sizing: border-box;
+    }
+
+    .aboutUsEmployeeContainer {
+      flex-direction: row;
+      justify-content: center;
+      align-items: flex-start;
+      width: 40%;
+      margin: 0;
+      position: relative;
+      overflow-x: hidden;
+
+    }
+
+    .employee {
+      text-align: center;
+      margin: 0 1rem;
+      flex: 0 0 10%;
+      min-width: 5rem;
+      margin-left: -0.5rem;
+    }
+
+    .employee img {
+      width: 4.5rem;
+      height: auto;
+      max-width: 9.375rem;
+      max-height: 9.375rem;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 0.2rem solid var(--primary);
+      margin-top: -1.75rem;
+      padding: 0.25rem;
+    }
+
+  }
+
+  @media (max-width: 62rem) {
+    .aboutUsPage {
+      display: flex;
+      justify-content: center;
+      padding-bottom: 5rem;
+      overflow: hidden;
+      box-sizing: border-box;
+    }
+
+    .aboutUsEmployeeContainer {
+      flex-direction: row;
+      justify-content: center;
+      align-items: flex-start;
+      width: 100%;
+      margin: 0;
+      padding-top: 5rem;
+      padding-bottom: 5rem;
+      padding-left: 1.5rem
+    }
+
+    .employee {
+      text-align: center;
+      margin: 0 1rem;
+      flex: 0 0 10%;
+      min-width: 5rem;
+      margin-left: -0.5rem;
+    }
+
+    .employee img {
+      width: 5.5rem;
+      height: auto;
+      max-width: 9.375rem;
+      max-height: 9.375rem;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 0.2rem solid var(--primary);
+      margin-top: -1.75rem;
+      padding: 0.25rem;
+    }
+
+  }
+
+  @media (max-width: 55rem) {
+    .aboutUsPage {
+      display: flex;
+      justify-content: center;
+      padding-bottom: 5rem;
+      overflow: hidden;
+      box-sizing: border-box;
+    }
+
+    .aboutUsEmployeeContainer {
+      flex-direction: row;
+      justify-content: center;
+      align-items: flex-start;
+      width: 100%;
+      margin: 0;
+      padding-right: 5rem;
+    }
+
+    .aboutUsEmployeeContainer {
+      flex-direction: row;
+      justify-content: center;
+      align-items: flex-start;
+      width: 100%;
+      margin: 0;
+      position: relative;
+      padding-right: 6rem;
+    }
+
+    .employee {
+      text-align: center;
+      margin: 0 1rem;
+      flex: 0 0 10%;
+      min-width: 5rem;
+    }
+
+    .employee img {
+      width: 6rem;
+      height: auto;
+      max-width: 9.375rem;
+      max-height: 9.375rem;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 0.2rem solid var(--primary);
+      margin-top: -1.75rem;
+    }
+
+
+  }
+
+  @media (max-width: 50rem) {
+    .aboutUsPage {
+      display: flex;
+      justify-content: center;
+      padding-bottom: 5rem;
+      overflow: hidden;
+      box-sizing: border-box;
+    }
+
+    .aboutUsEmployeeContainer {
+      flex-direction: row;
+      justify-content: center;
+      align-items: flex-start;
+      width: 100%;
+      margin: 0;
+      padding-right: 3rem;
+    }
+
+    .employee {
+      text-align: center;
+      margin: 0 1rem;
+      flex: 0 0 10%;
+      min-width: 5rem;
+      margin-left: -0.5rem;
+    }
+
+    .employee img {
+      width: 5.5rem;
+      height: auto;
+      max-width: 9.375rem;
+      max-height: 9.375rem;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 0.2rem solid var(--primary);
+      margin-top: -1.75rem;
+      padding: 0.25rem;
+    }
+  }
+
+  @media (max-width: 48rem) {
+
+    .aboutUsPage {
+      display: flex;
+      justify-content: center;
+      padding-bottom: 5rem;
+      overflow: hidden;
+      box-sizing: border-box;
+    }
+
+    .aboutUsEmployeeContainer {
+      flex-direction: row;
+      justify-content: center;
+      align-items: flex-start;
+      width: 90%;
+      margin: 0;
+      overflow-x: hidden;
+    }
+
+    .employee {
+      text-align: center;
+      margin: 0 1rem;
+      flex: 0 0 10%;
+      min-width: 5rem;
+    }
+
+    .employee img {
+      width: 6rem;
+      height: auto;
+      max-width: 9.375rem;
+      max-height: 9.375rem;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 0.2rem solid var(--primary);
+      margin-top: -1.75rem;
+      padding: 0.25rem;
+    }
+
+  }
+
+  @media (max-width: 40rem) {
+
+    .aboutUsPage {
+      display: flex;
+      justify-content: center;
+      padding-bottom: 5rem;
+      overflow: hidden;
+      box-sizing: border-box;
+    }
+
+    .aboutUsEmployeeContainer {
+      flex-direction: row;
+      justify-content: center;
+      align-items: flex-start;
+      width: 90%;
+      margin: 0;
+
+    }
+
+    .employee {
+      text-align: center;
+      margin: 0 1rem;
+      flex: 0 0 10%;
+      min-width: 5rem;
+    }
+
+    .employee img {
+      width: 6.5rem;
+      height: auto;
+      max-width: 9.375rem;
+      max-height: 9.375rem;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 0.2rem solid var(--primary);
+      margin-top: -1.75rem;
+      padding: 0.25rem;
+    }
+
+  }
+
+
+  @media (max-width: 30rem) {
+    .aboutUsPage {
+      display: flex;
+      justify-content: flex-start;
+      padding-bottom: 5rem;
+      overflow: hidden;
+      box-sizing: border-box;
+      padding-right: 3.125rem;
+      padding-left: 3.125rem;
+    }
+
+    .aboutUsEmployeeContainer {
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: flex-start;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      width: 100%;
+      margin: 0;
+    }
+
+    .employee {
+      text-align: center;
+      margin: 0 1rem;
+      flex: 0 0 10%;
+      min-width: 5rem;
+    }
+
+    .employee img {
+      width: 5.5rem;
+      height: auto;
+      max-width: 9.375rem;
+      max-height: 9.375rem;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 0.2rem solid var(--primary);
+      margin-top: -1.75rem;
+      padding: 0.25rem;
+    }
+
+  }
+
+
+  @media (max-width: 23.75rem) {
+    .aboutUsPage {
+      display: flex;
+      justify-content: center;
+      padding-bottom: 5rem;
+      overflow: hidden;
+      box-sizing: border-box;
+      padding-right: 2.5rem;
+      padding-left: 2.5rem;
+    }
+
+    .aboutUsEmployeeContainer {
+      flex-direction: row;
+      justify-content: center;
+      align-items: flex-start;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      width: 100%;
+      margin: 0;
+      padding-left: -9.375rem;
+    }
+
+
+
+    .employee {
+      text-align: center;
+      margin: 0 1rem;
+      flex: 0 0 10%;
+      min-width: 5rem;
+    }
+
+    .employee img {
+      width: 5.5rem;
+      height: auto;
+      max-width: 9.375rem;
+      max-height: 9.375rem;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 0.2rem solid var(--primary);
+      margin-top: -1.75rem;
+      padding: 0.25rem;
+    }
+  }
