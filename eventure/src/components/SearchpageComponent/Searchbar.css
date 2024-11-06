@@ -1,0 +1,66 @@
+input[type="number"],
+input[type="date"],
+input[type="text"].textInput,
+select {
+  width: 100%;
+  max-width: 150px;
+  padding: 8px;
+  margin: 4px 0;
+  font-size: 14px;
+  border-radius: 4px;
+  border: 1.5px solid var(--secondary);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="number"],
+input[type="text"].textInput,
+select {
+  color: var(--text);
+}
+
+input[type="number"]:focus,
+input[type="date"]:focus,
+input[type="text"].textInput:focus,
+select:focus {
+  border-color: var(--primary);
+  outline: none;
+}
+
+input[type="number"]::placeholder,
+input[type="text"].textInput::placeholder {
+  color: var(--secondary);
+  font-style: italic;
+}
+
+.minPriceInput,
+.maxPriceInput,
+.startDateInput,
+.endDateInput,
+.hostInput,
+.genreInput {
+  background-color: #fbfbfb;
+  color: #444;
+}
+
+button.searchButton {
+  padding: 8px 16px;
+  margin: 4px 0;
+  font-size: 14px;
+  color: var(--secondary-text);
+  background-color: var(--primary);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+button.searchButton:hover {
+  background-color: var(--accent);
+}
+
+
+/* .fieldGroup {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 12px;
+} */

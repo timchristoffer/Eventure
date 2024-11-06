@@ -3,42 +3,61 @@ import Searchbar from '../../components/SearchpageComponent/Searchbar';
 import axios from "axios";
 import EventCard from '../../components/EventCardComponent/EventCard';
 import { Link } from 'react-router-dom';
+import './Searchpage.css'
 
 const Searchpage = () => {
-  const [events, setEvents] = useState([]);
+  const [allEvents, setAllEvents] = useState([]);
+  const [allHosts, setAllHosts] = useState([]);
   const [filteredEvents, setFilteredEvents] = useState([]);
+  const [genres, setGenres] = useState([]);
 
-  useEffect(() =>{
+  useEffect(() => {
     const fetchEvents = async () => {
       try {
-        const response = await axios.get(`http://localhost:1337/api/events?populate=*`)
-        console.log("Response data: ", response.data);
-        setEvents(response.data.data);
+        const response = await axios.get(`http://localhost:1337/api/events?populate=*`);
+        setAllEvents(response.data.data);
         setFilteredEvents(response.data.data);
       } catch (error) {
-        console.error("Error fetching events: ", error)
+        console.error("Error fetching events: ", error);
       }
     };
-
     fetchEvents();
   }, []);
 
-  const handleSearch = (query) => {
-    if (query === "") {
-      setFilteredEvents(events);
-    } else {
-      const filtered = events.filter((event) =>
-        event.eventTitle.toLowerCase().includes(query.toLowerCase())
-      );
-      setFilteredEvents(filtered);
-    }
+  const handleSearch = ({ searchText, minPrice, maxPrice, startDate, endDate, host, genre }) => {
+    const results = allEvents.filter(event => {
+      const matchText = event.eventTitle.toLowerCase().includes(searchText.toLowerCase()) ||
+        event.eventVenue.toLowerCase().includes(searchText.toLowerCase());
+      const matchPrice = event.eventPrice >= minPrice && event.eventPrice <= maxPrice;
+  
+      const eventDate = new Date(event.eventTime); 
+      const matchStartDate = startDate ? eventDate >= new Date(startDate) : true;
+      const matchEndDate = endDate ? eventDate <= new Date(endDate) : true;
+
+      const matchHost = host ? event.host.hostName === host : true;
+
+      const matchGenre = genre ? event.eventGenre === genre : true;
+  
+      return matchText && matchPrice && matchStartDate && matchEndDate && matchHost && matchGenre;
+    });
+  
+    console.log("Filtered Results:", results);
+    setFilteredEvents(results);
   };
-  console.log({filteredEvents})
+  
+  useEffect(() => {
+    const uniqueHosts = [...new Set(allEvents.map(event => event.host.hostName))];
+    setAllHosts(uniqueHosts);
+
+    const uniqueGenres = [...new Set(allEvents.map(event => event.eventGenre))];
+    setGenres(uniqueGenres);
+  }, [allEvents]);
+
   return (
-    <div>
-      <h1>Searchpage</h1>
-      <Searchbar onSearch={handleSearch}/>
-      <div>
+    <div className='Searchpage'>
+      <h1 className='SearchpageTitle'>Searchpage</h1>
+      <Searchbar className="Searchbar" onSearch={handleSearch} hosts={allHosts} genres={genres}/>
+      <div className='EventCardsContainer'>
         {filteredEvents.map((event) => (
         <Link 
           to={`/event/${event.documentId}`}
@@ -50,7 +69,7 @@ const Searchpage = () => {
         ))}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Searchpage
+export default Searchpage;
