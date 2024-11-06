@@ -71,6 +71,7 @@
     max-width: 100%;
     left: 0;
     gap: 0rem;
+    position:fixed;
   }
 
 
