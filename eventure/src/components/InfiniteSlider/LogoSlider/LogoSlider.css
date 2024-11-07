@@ -48,26 +48,26 @@
 }
 
 /* Media Queries for Responsiveness */
-@media (max-width: 1200px) {
+@media (max-width: 75rem) {
     .logoSlider {
         width: 80vw; 
-        --width: 150px; 
-        --height: 100px; 
+        --width: 9.375rem; 
+        --height: 6.25rem; 
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 48rem) {
     .logoSlider {
         width: 90vw; 
-        --width: 120px; 
-        --height: 80px; 
+        --width: 7.5rem; 
+        --height: 5rem; 
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 30rem) {
     .logoSlider {
         width: 90vw; 
-        --width: 100px; 
-        --height: 60px;
+        --width: 6.25rem; 
+        --height: 3.75rem;
     }
 }
