@@ -5,7 +5,7 @@
 }
 
 html {
-  font-size: 16px;
+  font-size: 1rem;
   scroll-behavior: smooth;
 }
 
@@ -46,9 +46,9 @@ p {
 
 .content-wrapper {
   flex-grow: 1;
-  margin-top: 100px;
-  padding: 20px;
-  margin-bottom: 60px; /* Ensure there is space for the footer */
+  margin-top: 6.25rem;
+  padding: 1.25rem;
+  margin-bottom: 3.75rem; /* Ensure there is space for the footer */
 }
 
 :root[data-theme="light"] {
@@ -96,13 +96,13 @@ button {
 .header {
   background-color: var(--secondary);
   color: var(--text);
-  padding: 20px;
+  padding: 1.25rem;
   text-align: center;
 }
 
 .container {
   width: 90%;
-  max-width: 1200px;
+  max-width: 75rem;
   margin: 0 auto;
-  padding: 20px;
+  padding: 1.25rem;
 }
