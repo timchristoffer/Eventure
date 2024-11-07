@@ -5,7 +5,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
+  padding: 1.25rem;
   position: fixed; 
   bottom: 0;
   left: 0;
@@ -19,11 +19,11 @@
 .footer-contact, .footer-social, .footer-copyright {
   flex: 1;
   text-align: center;
-  margin: 10px;
+  margin: 0.625rem;
 }
 
 .footer-social a {
-  margin: 0 10px;
+  margin: 0 0.625rem;
   color: var(--text);
   text-decoration: none;
 }
@@ -33,11 +33,11 @@
 }
 
 .footer-social svg {
-  width: 48px;
-  height: 48px;
+  width: 3rem;
+  height: 3rem;
   transition: transform 0.3s ease-in-out;
   fill: var(--text); 
-  margin: 5px;
+  margin: 0.3125rem;
 }
 
 .footer-social svg:hover {
@@ -45,9 +45,9 @@
 }
 
 /* Media Queries for Responsiveness */
-@media (max-width: 2400px) {
+@media (max-width: 150rem) {
   .footer {
-    padding: 15px;
+    padding: 0.9375rem;
     flex-direction: column; 
     text-align: center;
     position: relative; 
@@ -56,19 +56,19 @@
   .footer-contact, .footer-social, .footer-copyright {
     flex: none;
     width: 100%;
-    margin: 5px 0;
+    margin: 0.3125rem 0;
   }
 
   .footer-social svg {
-    width: 36px;
-    height: 36px;
+    width: 2.25rem;
+    height: 2.25rem;
   }
   
 }
 
-@media (max-width: 768px) {
+@media (max-width: 48rem) {
   .footer {
-    padding: 10px;
+    padding: 0.625rem;
     flex-direction: column; 
     text-align: center;
     position: relative; 
@@ -77,18 +77,18 @@
   .footer-contact, .footer-social, .footer-copyright {
     flex: none;
     width: 100%;
-    margin: 5px 0;
+    margin: 0.3125rem 0;
   }
 
   .footer-social svg {
-    width: 36px;
-    height: 36px;
+    width: 2.25rem;
+    height: 2.25rem;
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 30rem) {
   .footer {
-    padding: 5px;
+    padding: 0.3125rem;
     flex-direction: column;
     text-align: center;
     position: relative; 
@@ -97,11 +97,11 @@
   .footer-contact, .footer-social, .footer-copyright {
     flex: none;
     width: 100%;
-    margin: 5px 0;
+    margin: 0.3125rem 0;
   }
 
   .footer-social svg {
-    width: 24px;
-    height: 24px;
+    width: 1.5rem;
+    height: 1.5rem;
   }
 }
