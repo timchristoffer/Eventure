@@ -29,7 +29,7 @@ const Searchbar = ({ onSearch, hosts, genres }) => {
         type="text"
         value={searchText}
         onChange={(e) => setSearchText(e.target.value)}
-        placeholder="Sök..."
+        placeholder="Search..."
       />
       
       <input
@@ -37,14 +37,14 @@ const Searchbar = ({ onSearch, hosts, genres }) => {
         type="number"
         value={minPrice}
         onChange={(e) => setMinPrice(e.target.value)}
-        placeholder="Min pris"
+        placeholder="Min price"
       />
       <input
         className="maxPriceInput"
         type="number"
         value={maxPrice}
         onChange={(e) => setMaxPrice(e.target.value)}
-        placeholder="Max pris"
+        placeholder="Max price"
       />
       
       <input
@@ -52,14 +52,14 @@ const Searchbar = ({ onSearch, hosts, genres }) => {
         type="date"
         value={startDate}
         onChange={(e) => setStartDate(e.target.value)}
-        placeholder="Startdatum"
+        placeholder="Startdate"
       />
       <input
         className="endDateInput"
         type="date"
         value={endDate}
         onChange={(e) => setEndDate(e.target.value)}
-        placeholder="Slutdatum"
+        placeholder="Enddate"
       />
 
       <select
@@ -67,7 +67,7 @@ const Searchbar = ({ onSearch, hosts, genres }) => {
         value={selectedHost}
         onChange={(e) => setSelectedHost(e.target.value)}
       >
-        <option value="">Alla Värdar</option>
+        <option value="">All Hosts</option>
         {hosts.map((host) => (
           <option key={host} value={host}>
             {host}
