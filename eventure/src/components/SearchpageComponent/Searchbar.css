@@ -57,10 +57,3 @@ button.searchButton {
 button.searchButton:hover {
   background-color: var(--accent);
 }
-
-
-/* .fieldGroup {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 12px;
-} */
