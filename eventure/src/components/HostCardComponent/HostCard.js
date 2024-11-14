@@ -3,6 +3,8 @@ import './HostCard.css';
 
 const HostCard = ({ host }) => {
 
+    
+
     const hostImg = host.hostAvatar[0]?.url
     ? `http://localhost:1337${host.hostAvatar[0].url}`
     : '';
@@ -15,6 +17,7 @@ const HostCard = ({ host }) => {
             <div>
                 {hostImg && <img
                 src={hostImg}
+                alt={host.hostName}
                 onError={(e) => console.error('Image load error: ', e)}
                 className="host-img"
                 />}
