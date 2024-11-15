@@ -80,7 +80,7 @@ const Searchbar = ({ onSearch, hosts, genres }) => {
         value={selectedGenre}
         onChange={(e) => setSelectedGenre(e.target.value)}
       >
-        <option value="">Alla Genrer</option>
+        <option value="">All Genres</option>
         {genres.map((genre) => (
           <option key={genre} value={genre}>
             {genre}
