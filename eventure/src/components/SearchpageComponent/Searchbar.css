@@ -15,7 +15,7 @@ select {
 input[type="number"],
 input[type="text"].textInput,
 select {
-  color: var(--text);
+  color: var(black)
 }
 
 input[type="number"]:focus,
@@ -39,7 +39,7 @@ input[type="text"].textInput::placeholder {
 .hostInput,
 .genreInput {
   background-color: #fbfbfb;
-  color: #444;
+  color: #000000;
 }
 
 button.searchButton {
