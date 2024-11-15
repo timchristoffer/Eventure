@@ -15,7 +15,7 @@ select {
 input[type="number"],
 input[type="text"].textInput,
 select {
-  color: var(--text);
+  color: black;
 }
 
 input[type="number"]:focus,
